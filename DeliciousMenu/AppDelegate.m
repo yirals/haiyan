@@ -30,20 +30,25 @@
     //    self.tableBar.
     UINavigationController *ViewNav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     ViewNav.tabBarItem.title = @"首页";
+    ViewNav.tabBarController.title = @"首页";
     ViewNav.tabBarItem.image = [UIImage imageNamed:@"53-house"];
     NewViewController *newVC = [[NewViewController alloc] init];
     UINavigationController *newViewNav = [[UINavigationController alloc] initWithRootViewController:newVC];
     newVC.tabBarItem.title = @"生鲜";
+    newVC.tabBarController.title = @"生鲜";
+    
     newVC.tabBarItem.image = [UIImage imageNamed:@"53-house"];
     
     MainViewController *mineVC = [[MainViewController alloc] init];
     UINavigationController *MainViewNav = [[UINavigationController alloc] initWithRootViewController:mineVC];
     MainViewNav.tabBarItem.title = @"个人";
+    MainViewNav.tabBarController.title = @"个人";
     MainViewNav.tabBarItem.image = [UIImage imageNamed:@"53-house"];
     
     SpecialViewController *specialVC = [[SpecialViewController alloc] init];
     UINavigationController *SpecialViewNav = [[UINavigationController alloc] initWithRootViewController:specialVC];
     specialVC.tabBarItem.title = @"专题";
+    specialVC.tabBarController.title = @"专题";
     specialVC.tabBarItem.image = [UIImage imageNamed:@"53-house"];
     
     tabBar.viewControllers = @[ViewNav,newViewNav,SpecialViewNav,MainViewNav];
@@ -51,7 +56,8 @@
     tabBar.tabBar.tintColor = [UIColor orangeColor];
     tabBar.tabBar.barTintColor = [UIColor redColor];
     self.window.rootViewController = tabBar;
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:235/255.0];
+    
     return YES;
 }
 

@@ -21,6 +21,10 @@
 		7AA004091C8854F1007F2A46 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA004081C8854F1007F2A46 /* MainViewController.m */; };
 		7AA0040C1C8858B4007F2A46 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0040B1C8858B4007F2A46 /* NewViewController.m */; };
 		7AA004101C887006007F2A46 /* NewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA0040F1C887006007F2A46 /* NewViewController.xib */; };
+		7AC43E3F1C893FAE000B5151 /* ShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC43E3D1C893FAE000B5151 /* ShowViewController.m */; };
+		7AC43E401C893FAE000B5151 /* ShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AC43E3E1C893FAE000B5151 /* ShowViewController.xib */; };
+		7AC43E481C896946000B5151 /* mainFirst.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AC43E471C896946000B5151 /* mainFirst.plist */; };
+		7AC43E4E1C897407000B5151 /* showModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC43E4D1C897407000B5151 /* showModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +51,14 @@
 		7AA0040A1C8858B4007F2A46 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
 		7AA0040B1C8858B4007F2A46 /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
 		7AA0040F1C887006007F2A46 /* NewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewViewController.xib; sourceTree = "<group>"; };
+		7AC43E3C1C893FAE000B5151 /* ShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowViewController.h; sourceTree = "<group>"; };
+		7AC43E3D1C893FAE000B5151 /* ShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowViewController.m; sourceTree = "<group>"; };
+		7AC43E3E1C893FAE000B5151 /* ShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowViewController.xib; sourceTree = "<group>"; };
+		7AC43E431C896192000B5151 /* store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = store.h; sourceTree = "<group>"; };
+		7AC43E451C896922000B5151 /* store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = store.h; sourceTree = "<group>"; };
+		7AC43E471C896946000B5151 /* mainFirst.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainFirst.plist; sourceTree = "<group>"; };
+		7AC43E4C1C897407000B5151 /* showModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = showModel.h; sourceTree = "<group>"; };
+		7AC43E4D1C897407000B5151 /* showModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = showModel.m; sourceTree = "<group>"; };
 		FCA3ECC3D5692FA94411307B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +154,9 @@
 			children = (
 				7AA003FF1C883DAE007F2A46 /* ViewController.h */,
 				7AA004001C883DAE007F2A46 /* ViewController.m */,
+				7AC43E3C1C893FAE000B5151 /* ShowViewController.h */,
+				7AC43E3D1C893FAE000B5151 /* ShowViewController.m */,
+				7AC43E3E1C893FAE000B5151 /* ShowViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -149,6 +164,8 @@
 		7AA003EF1C88276D007F2A46 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7AC43E4C1C897407000B5151 /* showModel.h */,
+				7AC43E4D1C897407000B5151 /* showModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +233,9 @@
 		7AA003F91C88276D007F2A46 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				7AC43E441C896922000B5151 /* pch */,
+				7AC43E461C896922000B5151 /* plist */,
+				7AC43E421C896173000B5151 /* pch */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -225,6 +245,30 @@
 			children = (
 			);
 			path = pch;
+			sourceTree = "<group>";
+		};
+		7AC43E421C896173000B5151 /* pch */ = {
+			isa = PBXGroup;
+			children = (
+				7AC43E431C896192000B5151 /* store.h */,
+			);
+			path = pch;
+			sourceTree = "<group>";
+		};
+		7AC43E441C896922000B5151 /* pch */ = {
+			isa = PBXGroup;
+			children = (
+				7AC43E451C896922000B5151 /* store.h */,
+			);
+			path = pch;
+			sourceTree = "<group>";
+		};
+		7AC43E461C896922000B5151 /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				7AC43E471C896946000B5151 /* mainFirst.plist */,
+			);
+			path = plist;
 			sourceTree = "<group>";
 		};
 		A67E27A6CC0BBDB73FB6FB37 /* Pods */ = {
@@ -306,11 +350,13 @@
 			files = (
 				7AA003DF1C8824F4007F2A46 /* LaunchScreen.storyboard in Resources */,
 				7AA003DC1C8824F4007F2A46 /* Assets.xcassets in Resources */,
+				7AC43E481C896946000B5151 /* mainFirst.plist in Resources */,
 				7AA004061C8854AB007F2A46 /* SpecialViewController.xib in Resources */,
 				7AA003FD1C88276D007F2A46 /* Main.storyboard in Resources */,
 				7AA004101C887006007F2A46 /* NewViewController.xib in Resources */,
 				7AA003FC1C88276D007F2A46 /* LaunchScreen.storyboard in Resources */,
 				7AA003DA1C8824F4007F2A46 /* Main.storyboard in Resources */,
+				7AC43E401C893FAE000B5151 /* ShowViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,9 +415,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AC43E4E1C897407000B5151 /* showModel.m in Sources */,
 				7AA003D41C8824F4007F2A46 /* AppDelegate.m in Sources */,
 				7AA004011C883DAE007F2A46 /* ViewController.m in Sources */,
 				7AA004051C8854AB007F2A46 /* SpecialViewController.m in Sources */,
+				7AC43E3F1C893FAE000B5151 /* ShowViewController.m in Sources */,
 				7AA0040C1C8858B4007F2A46 /* NewViewController.m in Sources */,
 				7AA004091C8854F1007F2A46 /* MainViewController.m in Sources */,
 				7AA003D11C8824F4007F2A46 /* main.m in Sources */,
