@@ -9,17 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface showModel : NSObject
-
 @property(nonatomic, copy) NSString *image;
 @property(nonatomic, copy) NSString *states;
 @property(nonatomic, copy) NSString *wayLable;
 @property(nonatomic, copy) NSString *timeLable;
 @property(nonatomic, copy) NSString *diffLable;
 @property(nonatomic, copy) NSString *nameLable;
-@property(nonatomic, copy) NSString *showImageView;
-@property(nonatomic, copy) NSString *numLable;
-@property(nonatomic, copy) NSString *makeLable;
 
--(instancetype)getModelData:(NSDictionary *)model;
+-(void)getModelData:(NSDictionary *)model;
 
 @end

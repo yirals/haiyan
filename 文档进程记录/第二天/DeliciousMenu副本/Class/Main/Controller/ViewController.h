@@ -13,7 +13,5 @@
 //创建可变数组，存放读取数据清单；
 @property(nonatomic, retain) NSMutableArray *listArray;
 
-@property(nonatomic, retain) NSMutableArray *imageArray;
-
 @end
 

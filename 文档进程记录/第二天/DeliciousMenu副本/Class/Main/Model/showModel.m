@@ -10,15 +10,6 @@
 
 @implementation showModel
 
-//-(instancetype)getModelData:(NSDictionary *)model{
-//    self = [super init];
-//    if (self) {
-//        int i = 0;
-//    }
-//    return self;
-//    
-//}
-
 
 
 

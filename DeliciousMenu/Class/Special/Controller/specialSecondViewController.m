@@ -1,35 +1,37 @@
 //
-//  SpecialViewController.m
+//  specialSecondViewController.m
 //  DeliciousMenu
 //
-//  Created by scjy on 16/3/3.
+//  Created by scjy on 16/3/5.
 //  Copyright © 2016年 刘海艳. All rights reserved.
 //
 
-#import "SpecialViewController.h"
-#import "specialTableViewCell.h"
 #import "specialSecondViewController.h"
-//static NSString *identifier = @"identifier";
+#import "specialSecondTableViewCell.h"
 
-@interface SpecialViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+static NSString *identifier = @"identifier";
+@interface specialSecondViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
 
 @end
 
-@implementation SpecialViewController
+@implementation specialSecondViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    [self.tableView registerNib:[UINib nibWithNibName:@"specialTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    // Do any additional setup after loading the view.
+    //注册cell;
+    [self.tableView registerNib:[UINib nibWithNibName:@"specialSecondTableViewCell" bundle:nil] forCellReuseIdentifier:identifier];
     [self.view addSubview:self.tableView];
+    
+    
 }
-
 #pragma mark----------tableView,delegate,dataScore
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    specialTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    specialSecondTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
     return cell;
 }
@@ -42,14 +44,8 @@
     
     return 20;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 90;
-}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    specialSecondViewController *secondVC = [[specialSecondViewController alloc] init];
-    [self.navigationController pushViewController:secondVC animated:YES];
-    
     
     
 }
@@ -60,12 +56,14 @@
 -(UITableView *)tableView{
     if (_tableView == nil) {
         self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
-        
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
     }
     return _tableView;
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -21,6 +21,4 @@
 //名字
 @property (strong, nonatomic) IBOutlet UILabel *nameLable;
 
-
-
 @end

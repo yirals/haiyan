@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "ShowViewController.h"
-//#import "ViewCollectionCell.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 //#import "store.h"
@@ -18,14 +17,14 @@ static NSString *Identifier = @"Identifier";
 
 //collection
 
-
-
-
-
 @property(nonatomic, strong) UICollectionView *collectionView;
 //@property(nonatomic, strong) UICollectionViewCell *cell;
 
 
+//首页菜单名字
+@property(nonatomic, strong) UILabel *nameLable;
+//首页菜单展示图片；
+@property(nonatomic, strong) UIImageView *showImag;
 
 @end
 
@@ -39,9 +38,6 @@ static NSString *Identifier = @"Identifier";
     [self.view addSubview:self.collectionView];
     [self updateConfig];
 }
-
-
-
 
 #pragma mark -----------数据加载
 -(void)updateConfig{
@@ -59,13 +55,15 @@ static NSString *Identifier = @"Identifier";
         NSDictionary *dict = responseObject;
         NSArray *array = dict[@"list"];
         for (NSDictionary *dic in array) {
-
+            
+            
             [self.listArray addObject:dic];
-            ;
-            [self.imageArray addObject:dic];
-            [self.collectionView reloadData];
-//            NSLog(@"%lu",self.listArray.count);
+//            NSLog(@"self.listArray = %@",self.listArray);
+            
+            
         }
+        
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error = %@",error);
     }];
@@ -76,41 +74,11 @@ static NSString *Identifier = @"Identifier";
 
 
 #pragma mark -----------dataScore/delegate
-
-//设置cell；
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:Identifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor blueColor];
-    
-   UILabel *snameLable = [[UILabel alloc] initWithFrame:CGRectMake(0, cell.frame.size.height*9/10, 182, cell.frame.size.height/9)];
-    snameLable.backgroundColor = [UIColor orangeColor];
-    
-     UIImageView *showImag = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 182, cell.frame.size.height*9/10)];
-//    showImag.backgroundColor = [UIColor blackColor];
-//
-    if (indexPath.row < self.listArray.count) {
-        snameLable.text = self.listArray[indexPath.row][@"title"];
-        
-    }
-    if (indexPath.row < self.listArray.count) {
-        [showImag sd_setImageWithURL:[NSURL URLWithString:self.listArray[indexPath.row][@"cover"]] placeholderImage:nil];
-    }
-    [cell.contentView addSubview:snameLable];
-    [cell.contentView addSubview:showImag];
-    
-    
-    
-    return cell;
-    
-}
-
-
 //cell个数；
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-
+    
     return self.listArray.count;
-//        return 10;
+//    return 10;
     
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -122,14 +90,44 @@ static NSString *Identifier = @"Identifier";
 
 //点击事件
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
     ShowViewController *showVC = [[ShowViewController alloc] init];
     
-    [self.navigationController pushViewController:showVC animated:YES];
+    [self.navigationController popToViewController:showVC animated:YES];
     
     
 }
 
+//设置cell；
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:Identifier forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor blueColor];
+    //
+    self.nameLable = [[UILabel alloc] initWithFrame:CGRectMake(0, cell.frame.size.height*9/10, cell.frame.size.width, cell.frame.size.height/9)];
+    self.nameLable.backgroundColor = [UIColor orangeColor];
+//    self.nameLable.text = @"你大爷";
+//    [cell.contentView addSubview:self.nameLable];
+    
+    
+    if (indexPath.row < self.listArray.count) {
+        self.nameLable.text = self.listArray[indexPath.row][@"title"];
+    }
+    
+    self.showImag = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height*9/10)];
+    self.showImag.backgroundColor = [UIColor blackColor];
+//    NSURL *urls = self.listArray[indexPath.row][@"cover"];
+//    self.showImag = [UIImage imageNamed:self.listArray[indexPath.row][@"cover"]];
+//    [self.showImag sd_setImageWithURL:urls placeholderImage:nil];
+    
+    
+    [cell addSubview:self.nameLable];
+    [cell addSubview:self.showImag];
+    
+    
+    
+    return cell;
+    
+}
 
 #pragma mark-------------collectionView懒加载
 -(UICollectionView *)collectionView{
@@ -154,7 +152,7 @@ static NSString *Identifier = @"Identifier";
         
         
         
-//        self.collectionView.backgroundColor = [UIColor cyanColor];
+        self.collectionView.backgroundColor = [UIColor cyanColor];
         
         //注册item类型；
         
@@ -175,14 +173,18 @@ static NSString *Identifier = @"Identifier";
     
 }
 
--(NSMutableArray *)imageArray{
-    if (_imageArray == nil) {
-        self.imageArray = [NSMutableArray new];
-    }
-    return _imageArray;
-}
-
-
+//-(UILabel *)nameLable{
+//    if (_nameLable == nil) {
+//        self.nameLable = [[UILabel alloc] init];
+//    }
+//    return _nameLable;
+//}
+//-(UIImageView *)showImag{
+//    if (_showImag == nil) {
+//        self.showImag = [[UIImageView alloc] init];
+//    }
+//    return _showImag;
+//}
 
 
 - (void)didReceiveMemoryWarning {
