@@ -8,7 +8,8 @@
 
 #import "specialSecondTableViewCell.h"
 
-#import <SDWebImage/UIImageView+HighlightedWebCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
 @interface specialSecondTableViewCell ()
 @property (strong, nonatomic) IBOutlet UIImageView *showImg;
 
@@ -24,11 +25,14 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    self.frame = CGRectMake(0, 64, self.frame.size.width, 90);
+//    self.frame = CGRectMake(0, 64, self.frame.size.width, 90);
 }
 
 -(void)setModel:(specialSecondModel *)model{
-//    self.showImg sd_
+    
+    [self.showImg sd_setImageWithURL:[NSURL URLWithString:model.ImagView] placeholderImage:nil];
+    self.nameLable.text = model.nameLable;
+    self.makeLable.text = model.makeLable;
     
 }
 

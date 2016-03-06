@@ -13,9 +13,9 @@
 -(instancetype)initWithModel:(NSDictionary *)dict{
     self = [super init];
     if (self) {
-        self.nameLable = dict[@"546"];
-        self.makeLable = dict[@"5423"];
-        self.makeLable = dict[@"1564"];
+        self.nameLable = dict[@"title"];
+        self.ImagView = dict[@"cover"];
+        self.makeLable = dict[@"message"];
     }
     return self;
 }

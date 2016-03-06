@@ -36,6 +36,7 @@ static NSString *Identifier = @"Identifier";
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"主页";
 //    self.navigationController.
+    self.view.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:0.5];
     [self.view addSubview:self.collectionView];
     [self updateConfig];
 }
@@ -63,6 +64,7 @@ static NSString *Identifier = @"Identifier";
             [self.listArray addObject:dic];
             ;
             [self.imageArray addObject:dic];
+            
             [self.collectionView reloadData];
 //            NSLog(@"%lu",self.listArray.count);
         }
@@ -123,7 +125,10 @@ static NSString *Identifier = @"Identifier";
 //点击事件
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    ShowViewController *showVC = [[ShowViewController alloc] init];
+   
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"show" bundle:nil];
+ 
+    ShowViewController *showVC = sb.instantiateInitialViewController;
     
     [self.navigationController pushViewController:showVC animated:YES];
     
@@ -154,7 +159,7 @@ static NSString *Identifier = @"Identifier";
         
         
         
-//        self.collectionView.backgroundColor = [UIColor cyanColor];
+//        self.collectionView.backgroundColor = [UIColor blackColor];
         
         //注册item类型；
         

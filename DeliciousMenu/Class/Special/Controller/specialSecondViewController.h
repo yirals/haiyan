@@ -10,4 +10,8 @@
 
 @interface specialSecondViewController : UIViewController
 
+@property(nonatomic, strong) NSString *IDStr;
+@property(nonatomic, copy) NSString *nameTitle;
+
+
 @end

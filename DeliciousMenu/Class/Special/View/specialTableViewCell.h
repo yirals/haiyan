@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "specialModel.h"
 @interface specialTableViewCell : UITableViewCell
+
+@property(nonatomic, retain) specialModel *model;
+
 
 @end

@@ -13,8 +13,11 @@
 -(instancetype)initWithModel:(NSDictionary *)dict{
     self = [super init];
     if (self) {
-        self.nameLable = dict[@"546"];
-        self.makeLable = dict[@"5423"];
+        self.nameLable = dict[@"title"];
+        self.makeLable = dict[@"message"];
+        self.ShowImageView = dict[@"scover"];
+        self.SecondID = dict[@"id"];
+        
     }
     return self;
 }

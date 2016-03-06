@@ -11,6 +11,9 @@
 @interface specialModel : NSObject
 @property(nonatomic, copy) NSString *nameLable;
 @property(nonatomic, copy) NSString *makeLable;
+@property(nonatomic, copy) NSString *ShowImageView;
+@property(nonatomic, copy) NSString *SecondID;
+
 
 -(instancetype)initWithModel:(NSDictionary *)dict;
 

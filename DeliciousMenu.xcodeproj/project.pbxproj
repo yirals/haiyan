@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		06828C8476492AB320EFF59D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 219CC1D806944FB3B1370662 /* libPods.a */; };
+		7A07D4FA1C8C040400729A62 /* specialNetWorkFirst.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A07D4F91C8C040400729A62 /* specialNetWorkFirst.plist */; };
+		7A07D4FC1C8C22EB00729A62 /* specialNetWorkingSecond.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A07D4FB1C8C22EA00729A62 /* specialNetWorkingSecond.plist */; };
+		7A07D5011C8C399D00729A62 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A07D4FE1C8C399D00729A62 /* ProgressHUD.bundle */; };
+		7A07D5021C8C399D00729A62 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07D5001C8C399D00729A62 /* ProgressHUD.m */; };
+		7A07D5051C8C3A3F00729A62 /* UIViewController+Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07D5041C8C3A3F00729A62 /* UIViewController+Comment.m */; };
+		7A07D5091C8C557400729A62 /* HeadCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07D5071C8C557400729A62 /* HeadCollectionReusableView.m */; };
+		7A07D50A1C8C557400729A62 /* HeadCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A07D5081C8C557400729A62 /* HeadCollectionReusableView.xib */; };
 		7AA003D11C8824F4007F2A46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA003D01C8824F4007F2A46 /* main.m */; };
 		7AA003D41C8824F4007F2A46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA003D31C8824F4007F2A46 /* AppDelegate.m */; };
 		7AA003DA1C8824F4007F2A46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA003D81C8824F4007F2A46 /* Main.storyboard */; };
@@ -39,6 +46,16 @@
 /* Begin PBXFileReference section */
 		219CC1D806944FB3B1370662 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		382CD22E7E98567333959160 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7A07D4F91C8C040400729A62 /* specialNetWorkFirst.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = specialNetWorkFirst.plist; sourceTree = "<group>"; };
+		7A07D4FB1C8C22EA00729A62 /* specialNetWorkingSecond.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = specialNetWorkingSecond.plist; sourceTree = "<group>"; };
+		7A07D4FE1C8C399D00729A62 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		7A07D4FF1C8C399D00729A62 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		7A07D5001C8C399D00729A62 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		7A07D5031C8C3A2F00729A62 /* UIViewController+Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Comment.h"; sourceTree = "<group>"; };
+		7A07D5041C8C3A3F00729A62 /* UIViewController+Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Comment.m"; sourceTree = "<group>"; };
+		7A07D5061C8C557400729A62 /* HeadCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadCollectionReusableView.h; sourceTree = "<group>"; };
+		7A07D5071C8C557400729A62 /* HeadCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadCollectionReusableView.m; sourceTree = "<group>"; };
+		7A07D5081C8C557400729A62 /* HeadCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadCollectionReusableView.xib; sourceTree = "<group>"; };
 		7AA003CC1C8824F4007F2A46 /* DeliciousMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliciousMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA003D01C8824F4007F2A46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7AA003D21C8824F4007F2A46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,6 +115,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A07D4FD1C8C399D00729A62 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				7A07D4FE1C8C399D00729A62 /* ProgressHUD.bundle */,
+				7A07D4FF1C8C399D00729A62 /* ProgressHUD.h */,
+				7A07D5001C8C399D00729A62 /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
 		7AA003C31C8824F4007F2A46 = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +226,9 @@
 				7AFD86E91C8AB42B00154EB1 /* showTableViewCell.h */,
 				7AFD86EA1C8AB42B00154EB1 /* showTableViewCell.m */,
 				7AFD86EB1C8AB42B00154EB1 /* showTableViewCell.xib */,
+				7A07D5061C8C557400729A62 /* HeadCollectionReusableView.h */,
+				7A07D5071C8C557400729A62 /* HeadCollectionReusableView.m */,
+				7A07D5081C8C557400729A62 /* HeadCollectionReusableView.xib */,
 				7AFD86E71C8A777C00154EB1 /* show.storyboard */,
 			);
 			path = View;
@@ -272,6 +302,7 @@
 		7AA003F91C88276D007F2A46 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				7A07D4FD1C8C399D00729A62 /* ProgressHUD */,
 				7AC43E441C896922000B5151 /* pch */,
 				7AC43E461C896922000B5151 /* plist */,
 				7AC43E421C896173000B5151 /* pch */,
@@ -297,6 +328,8 @@
 		7AC43E441C896922000B5151 /* pch */ = {
 			isa = PBXGroup;
 			children = (
+				7A07D5041C8C3A3F00729A62 /* UIViewController+Comment.m */,
+				7A07D5031C8C3A2F00729A62 /* UIViewController+Comment.h */,
 				7AC43E451C896922000B5151 /* store.h */,
 			);
 			path = pch;
@@ -306,6 +339,8 @@
 			isa = PBXGroup;
 			children = (
 				7AC43E471C896946000B5151 /* mainFirst.plist */,
+				7A07D4F91C8C040400729A62 /* specialNetWorkFirst.plist */,
+				7A07D4FB1C8C22EA00729A62 /* specialNetWorkingSecond.plist */,
 			);
 			path = plist;
 			sourceTree = "<group>";
@@ -388,13 +423,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AA003DF1C8824F4007F2A46 /* LaunchScreen.storyboard in Resources */,
+				7A07D4FA1C8C040400729A62 /* specialNetWorkFirst.plist in Resources */,
 				7AA003DC1C8824F4007F2A46 /* Assets.xcassets in Resources */,
 				7AC43E481C896946000B5151 /* mainFirst.plist in Resources */,
 				7AA004061C8854AB007F2A46 /* SpecialViewController.xib in Resources */,
 				7AFD86ED1C8AB42B00154EB1 /* showTableViewCell.xib in Resources */,
 				7AA003FD1C88276D007F2A46 /* Main.storyboard in Resources */,
 				7AFD86F21C8ABEC400154EB1 /* specialTableViewCell.xib in Resources */,
+				7A07D5011C8C399D00729A62 /* ProgressHUD.bundle in Resources */,
+				7A07D4FC1C8C22EB00729A62 /* specialNetWorkingSecond.plist in Resources */,
 				7AFD86FD1C8AC06F00154EB1 /* specialSecondTableViewCell.xib in Resources */,
+				7A07D50A1C8C557400729A62 /* HeadCollectionReusableView.xib in Resources */,
 				7AFD86E81C8A777C00154EB1 /* show.storyboard in Resources */,
 				7AA004101C887006007F2A46 /* NewViewController.xib in Resources */,
 				7AA003FC1C88276D007F2A46 /* LaunchScreen.storyboard in Resources */,
@@ -469,6 +508,9 @@
 				7AFD87031C8AC0AC00154EB1 /* specialSecondModel.m in Sources */,
 				7AA0040C1C8858B4007F2A46 /* NewViewController.m in Sources */,
 				7AFD87001C8AC09700154EB1 /* specialModel.m in Sources */,
+				7A07D5091C8C557400729A62 /* HeadCollectionReusableView.m in Sources */,
+				7A07D5021C8C399D00729A62 /* ProgressHUD.m in Sources */,
+				7A07D5051C8C3A3F00729A62 /* UIViewController+Comment.m in Sources */,
 				7AA004091C8854F1007F2A46 /* MainViewController.m in Sources */,
 				7AA003D11C8824F4007F2A46 /* main.m in Sources */,
 			);

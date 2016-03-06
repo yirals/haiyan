@@ -29,42 +29,45 @@ static NSString *identifier = @"identifier";
     // Do any additional setup after loading the view from its nib.
     self.tabBarController.title = @"详情";
     self.view.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:235/255.0];
-    [self configTableViewHeadView];
+    
+//    [self configTableViewHeadView];
+    self.tableview.tableHeaderView = self.showView;
 
+    [self.view addSubview:self.tableview];
     
     //注册cell
-    [self.tableview registerNib:[UINib nibWithNibName:@"showTableView" bundle:nil] forCellReuseIdentifier:identifier];
+    [self.tableview registerNib:[UINib nibWithNibName:@"showTableViewcell" bundle:nil] forCellReuseIdentifier:identifier];
     //
     
     
     
 }
 #pragma mare------------tableView自定义头部；
--(void)configTableViewHeadView{
-    UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 260, self.view.frame.size.width)];
-    
-    self.tableview.tableHeaderView = headView ;
-    
-    
-}
+//-(void)configTableViewHeadView{
+//    UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 260, self.view.frame.size.width)];
+//    
+////    self.tableview.tableHeaderView = headView ;
+//    
+//    
+//}
 
 #pragma mark-----------delegate,detaScore
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     showTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    if (cell == nil) {
-        cell = [[showTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        
-    }
+//    if (cell == nil) {
+//        cell = [[showTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+//        
+//    }
     
     return cell;
 
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 90;
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return 90;
+//}
 
 
 
@@ -73,6 +76,13 @@ static NSString *identifier = @"identifier";
     return 10;
 }
 
+//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//    
+//    UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 260, self.view.frame.size.width)];
+//    
+//    return headView;
+//    
+//}
 
 
 
@@ -84,7 +94,7 @@ static NSString *identifier = @"identifier";
         
         self.tableview.frame = CGRectMake(0, 260, self.view.frame.size.width, 90);
         
-        [self.view addSubview:self.tableview];
+
         
         self.tableview.delegate = self;
         self.tableview.dataSource = self;

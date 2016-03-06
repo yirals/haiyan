@@ -18,7 +18,7 @@
 #define specialNetWorkFirst @"http://api.2meiwei.com/v1/collect/list/?type=5&idx=1&size=10&appname=mw_android&appver=1.0.12&osver=5.0.2&devicename=ALE-TL00&openudid=866656021957511"
 //专题转接页面
 
-#define specialNetWorkSecond @"http://api.2meiwei.com/v1/collect/list/?type=5&idx=1&size=10&appname=mw_android&appver=1.0.12&osver=5.0.2&devicename=ALE-TL00&openudid=866656021957511"
+#define specialNetWorkSecond @"http://api.2meiwei.com/v1/collect/2882487/?idx=1&size=15&appname=mw_android&appver=1.0.12&osver=5.0.2&devicename=ALE-TL00&openudid=866656021957511"
 
 //专题再次转接页面
 

@@ -1,0 +1,153 @@
+{
+count = 10;
+"error_code" = 1;
+"error_descr" = success;
+idx = 1;
+list =     (
+{
+author = lope;
+ccover = "http://i3.2meiwei.com/attachment/collect/201501/20150101204442680880593.jpg";
+count = 19;
+cover = "http://i3.2meiwei.com/attachment/collect/201501/20150101204442680880593.jpg";
+id = 2882487;
+message = "\U9762\U5305\U914d\U6d53\U6c64\U6700\U597d\U4e0d\U8fc7\U4e86";
+replynum = 0;
+scover = "http://p3.2meiwei.com/attachment/collect/201501/20150101204442680880593.jpg";
+status = 5;
+title = "\U897f\U5f0f\U6d53\U6c64";
+uid = 8;
+viewnum = 218;
+},
+{
+author = "";
+ccover = "http://i3.2meiwei.com/attachment/collect/201411/20141127110607250286435.png";
+count = 87;
+cover = "http://i3.2meiwei.com/attachment/collect/201411/20141127110607250286435.png";
+id = 2882480;
+message = "\U7117\U996d\U505a\U6cd5\U5927\U5168";
+replynum = 0;
+scover = "http://p3.2meiwei.com/attachment/collect/201411/20141127110607250286435.png";
+status = 5;
+title = "\U7117\U996d";
+uid = 0;
+viewnum = 2740;
+},
+{
+author = "";
+ccover = "http://i3.2meiwei.com/attachment/collect/201411/2014112010333068153163.png";
+count = 88;
+cover = "http://i3.2meiwei.com/attachment/collect/201411/2014112010333068153163.png";
+id = 2882423;
+message = "\U5b89\U742a\U4e13\U533a";
+replynum = 0;
+scover = "http://p3.2meiwei.com/attachment/collect/201411/2014112010333068153163.png";
+status = 3;
+title = "\U5b89\U742a\U4e13\U533a";
+uid = 0;
+viewnum = 159;
+},
+{
+author = "mw_\U751f\U83dc\U6851";
+ccover = "http://i3.2meiwei.com/attachment/collect/201411/20141107163754512129381.jpg";
+count = 123;
+cover = "http://i3.2meiwei.com/attachment/collect/201411/20141107163754512129381.jpg";
+id = 2882422;
+message = "0\U5931\U8d25\U70e4\U7bb1\U83dc";
+replynum = 0;
+scover = "http://p3.2meiwei.com/attachment/collect/201411/20141107163754512129381.jpg";
+status = 5;
+title = "0\U5931\U8d25\U70e4\U7bb1\U83dc";
+uid = 7020507;
+viewnum = 326;
+},
+{
+author = "mw_\U751f\U83dc\U6851";
+ccover = "http://i3.2meiwei.com/attachment/collect/201411/20141106143315186961761.png";
+count = 214;
+cover = "http://i3.2meiwei.com/attachment/collect/201411/20141106143315186961761.png";
+id = 2882421;
+message = "\U4e0d\U7528\U70e4\U7bb1\U4e5f\U53ef\U4ee5\U505a\U51fa\U7f8e\U5473\U751c\U70b9\U3002";
+replynum = 0;
+scover = "http://p3.2meiwei.com/attachment/collect/201411/20141106143315186961761.png";
+status = 5;
+title = "\U4e0d\U7528\U70e4\U7bb1\U4e5f\U80fd\U505a\U70d8\U7119";
+uid = 7020507;
+viewnum = 288;
+},
+{
+author = "mw_\U751f\U83dc\U6851";
+ccover = "http://i3.2meiwei.com/attachment/collect/201411/20141105150113979288335.png";
+count = 61;
+cover = "http://i3.2meiwei.com/attachment/collect/201411/20141105150113979288335.png";
+id = 2882420;
+message = "0\U57fa\U7840\U70d8\U7119\U83dc\U5355\Uff0c\U8ba9\U4f60\U4e0d\U61c2\U70d8\U7119\U4e5f\U53ef\U4ee5\U505a\U51fa\U7f8e\U5473\U86cb\U7cd5\U3002";
+replynum = 0;
+scover = "http://p3.2meiwei.com/attachment/collect/201411/20141105150113979288335.png";
+status = 5;
+title = "0\U57fa\U7840\U70d8\U7119\U83dc\U5355";
+uid = 7020507;
+viewnum = 228;
+},
+{
+author = "mw_\U751f\U83dc\U6851";
+ccover = "http://i3.2meiwei.com/attachment/collect/201410/20141015105914309491973.jpg";
+count = 53;
+cover = "http://i3.2meiwei.com/attachment/collect/201410/20141015105914309491973.jpg";
+id = 2882419;
+message = "\U5f3a\U5065\U6d88\U5316\U7cfb\U7edf\U52a9\U4e8e\U76ae\U80a4\U4fdd\U5065\U53ca\U7f8e\U5bb9\U6539\U5584\U504f\U75db\U3001\U9ad8\U8840\U538b\U3001\U8179\U6cfb\U3001\U52a0\U901f\U8840\U6db2\U5faa\U73af\U6cbb\U7597\U53e3\U75ae\U6d88\U9664\U53e3\U81ed";
+replynum = 0;
+scover = "http://p3.2meiwei.com/attachment/collect/201410/20141015105914309491973.jpg";
+status = 5;
+title = "\U7ef4\U751f\U7d20b3\U83dc\U5355";
+uid = 7020507;
+viewnum = 51;
+},
+{
+author = "mw_\U751f\U83dc\U6851";
+ccover = "http://i3.2meiwei.com/attachment/collect/201410/2014101417180139973818.jpg";
+count = 53;
+cover = "http://i3.2meiwei.com/attachment/collect/201410/2014101417180139973818.jpg";
+id = 2882418;
+message = "\U7ef4\U751f\U7d20b2\U4fc3\U8fdb\U78b3\U6c34\U5316\U5408\U7269\U3001\U8102\U80aa\U4e0e\U86cb\U767d\U8d28\U65b0\U9648\U4ee3\U8c22\U5e76\U52a9\U4e8e\U5f62\U6297\U4f53\U53ca\U7ea2\U8840\U7403\U7ef4\U6301\U7ec6\U80de\U547c\U5438";
+replynum = 0;
+scover = "http://p3.2meiwei.com/attachment/collect/201410/2014101417180139973818.jpg";
+status = 5;
+title = "\U7ef4\U751f\U7d20b2\U83dc\U5355";
+uid = 7020507;
+viewnum = 54;
+},
+{
+author = "mw_\U751f\U83dc\U6851";
+ccover = "http://i3.2meiwei.com/attachment/collect/201410/20141014165113956772122.jpg";
+count = 63;
+cover = "http://i3.2meiwei.com/attachment/collect/201410/20141014165113956772122.jpg";
+id = 2882417;
+message = "\U7ef4\U751f\U7d20b1\U4fc3\U8fdb\U78b3\U6c34\U5316\U5408\U7269\U65b0\U9648\U4ee3\U8c22\U80fd\U7ef4\U62a4\U795e\U7ecf\U7cfb\U7edf\U5065\U5eb7\U7a33\U5b9a\U98df\U6b32\U523a\U6fc0\U53ca\U4fdd\U6301\U826f\U808c\U8089\U72b6\U51b5";
+replynum = 0;
+scover = "http://p3.2meiwei.com/attachment/collect/201410/20141014165113956772122.jpg";
+status = 5;
+title = "\U7ef4\U751f\U7d20b1\U83dc\U5355";
+uid = 7020507;
+viewnum = 61;
+},
+{
+author = "mw_\U751f\U83dc\U6851";
+ccover = "http://i3.2meiwei.com/attachment/collect/201410/20141014160303573902306.jpg";
+count = 52;
+cover = "http://i3.2meiwei.com/attachment/collect/201410/20141014160303573902306.jpg";
+id = 2882416;
+message = "\U5e2e\U52a9\U4f53\U7ec4\U7ec7\U4fee\U8865\Uff0c\U773c\U775b\U4fdd\U5065\U91cd\U8981\Uff0c\U80fd\U62b5\U5fa1\U7ec6\U83cc\U514d\U67d3\Uff0c\U4fdd\U62a4\U76ae\U7ec4\U7ec7\U5065\U5eb7\Uff0c\U4fc3\U8fdb\U9aa8\U9abc\U4e0e\U7259\U9f7f\U53d1\U80b2";
+replynum = 0;
+scover = "http://p3.2meiwei.com/attachment/collect/201410/20141014160303573902306.jpg";
+status = 5;
+title = "\U7ef4\U751f\U7d20a\U83dc\U5355";
+uid = 7020507;
+viewnum = 48;
+}
+);
+order = dateline;
+size = 10;
+start = 0;
+total = 715;
+}
+
