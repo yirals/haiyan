@@ -9,14 +9,23 @@
 #import "SpecialViewController.h"
 #import "specialTableViewCell.h"
 #import "specialSecondViewController.h"
-
+#import "PullingRefreshTableView.h"
 #import "specialModel.h"
+
+#import "HWTools.h"
 //网络请求插件
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "store.h"
 //static NSString *identifier = @"identifier";
 
 @interface SpecialViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+{
+    NSInteger _page;
+}
+@property(nonatomic, assign) BOOL refreshing;
+
+//@property(nonatomic, strong) PullingRefreshTableView *tableView;
 
 @property(nonatomic, strong) UITableView *tableView;
 
@@ -31,6 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    _page = 1;
     [self.tableView registerNib:[UINib nibWithNibName:@"specialTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:self.tableView];
     [self requestData];
@@ -40,7 +50,7 @@
 -(void)requestData{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    [manager GET:specialNetWorkFirst parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:[NSString stringWithFormat:@"%@%lu&size=10",specialNetWorkFirst,(long)_page] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
 //        YiralLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //        YiralLog(@"%@",responseObject);
@@ -60,10 +70,48 @@
     
 }
 
+/*
+#pragma mark------------------上拉刷新与下拉加载
+//手指开始拖动方法；
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self.tableView tableViewDidScroll:scrollView];
+    
+}
+//下拉刷新开始时调用
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    [self.tableView tableViewDidEndDragging:scrollView];
+    
+}
+
+//开始刷新的时候掉用；
+-(void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView{
+    _page = 1;
+    self.refreshing = YES;
+    [self performSelector:@selector(requestData) withObject:nil afterDelay:1.0];
+    
+}
+
+//上拉加载开始调用
+-(void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView{
+    _page += 1;
+    self.refreshing = NO;
+    [self performSelector:@selector(requestData) withObject:nil afterDelay:1.0];
+    
+}
+
+//刷新完成时间
+- (NSDate *)pullingTableViewRefreshingFinishedDate{
+    //创建一个NSDataFormatter显示刷新时间
+    return [HWTools getSystemNowDay];
+}
+*/
+
+
 #pragma mark----------tableView,delegate,dataScore
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     specialTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
 //    self.model = self.listArray[indexPath.row];
     
     

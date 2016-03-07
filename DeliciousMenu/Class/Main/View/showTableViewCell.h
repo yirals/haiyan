@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "showModel.h"
 
 @interface showTableViewCell : UITableViewCell
+
+@property(nonatomic, strong) showModel *model;
 
 @end

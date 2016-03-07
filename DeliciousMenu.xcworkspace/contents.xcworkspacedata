@@ -2,16 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:specialSecondTableViewCell.h">
-   </FileRef>
-   <FileRef
-      location = "group:specialSecondTableViewCell.m">
-   </FileRef>
-   <FileRef
-      location = "group:specialSecondTableViewCell.xib">
-   </FileRef>
-   <FileRef
-      location = "group:showStoryboard.storyboard">
+      location = "group:specialNetWorkingThird.plist">
    </FileRef>
    <FileRef
       location = "group:DeliciousMenu.xcodeproj">

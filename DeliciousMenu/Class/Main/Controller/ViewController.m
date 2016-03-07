@@ -11,14 +11,19 @@
 //#import "ViewCollectionCell.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
-//#import "store.h"
+#import "PullingRefreshTableView.h"
+#import "store.h"
 
 static NSString *Identifier = @"Identifier";
+
+
 @interface ViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 //collection
 
-
+{
+    NSInteger _page;
+}
 
 
 
@@ -36,7 +41,10 @@ static NSString *Identifier = @"Identifier";
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"主页";
 //    self.navigationController.
-    self.view.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:0.5];
+    _page = 1;
+    
+    
+    self.view.backgroundColor = backgroungColor;
     [self.view addSubview:self.collectionView];
     [self updateConfig];
 }
@@ -47,12 +55,12 @@ static NSString *Identifier = @"Identifier";
 #pragma mark -----------数据加载
 -(void)updateConfig{
     
-    NSString *url = @"http://api.2meiwei.com/v1/collect/29973/?idx=1&size=10";
+    NSString *url = @"http://api.2meiwei.com/v1/collect/29973/?idx=";
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     
-    [manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:[NSString stringWithFormat:@"%@%lu&size=10",url,_page] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"downloadProgress = %@",downloadProgress);
      
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -76,7 +84,6 @@ static NSString *Identifier = @"Identifier";
     
 }
 
-
 #pragma mark -----------dataScore/delegate
 
 //设置cell；
@@ -89,8 +96,8 @@ static NSString *Identifier = @"Identifier";
     snameLable.backgroundColor = [UIColor orangeColor];
     
      UIImageView *showImag = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 182, cell.frame.size.height*9/10)];
-//    showImag.backgroundColor = [UIColor blackColor];
-//
+
+
     if (indexPath.row < self.listArray.count) {
         snameLable.text = self.listArray[indexPath.row][@"title"];
         
@@ -124,12 +131,15 @@ static NSString *Identifier = @"Identifier";
 
 //点击事件
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+
+//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"show" bundle:nil];
+// 
+//    ShowViewController *showVC = [sb instantiateViewControllerWithIdentifier:@"showSB"];
+    ShowViewController *showVC = [[ShowViewController alloc] init];
+    NSLog(@"%@ %ld",self.listArray[indexPath.row], indexPath.row);
+    showVC.strID = self.listArray[indexPath.row][@"id"];
     
-   
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"show" bundle:nil];
  
-    ShowViewController *showVC = sb.instantiateInitialViewController;
-    
     [self.navigationController pushViewController:showVC animated:YES];
     
     
@@ -159,7 +169,7 @@ static NSString *Identifier = @"Identifier";
         
         
         
-//        self.collectionView.backgroundColor = [UIColor blackColor];
+        self.collectionView.backgroundColor = [UIColor clearColor];
         
         //注册item类型；
         
@@ -187,7 +197,45 @@ static NSString *Identifier = @"Identifier";
     return _imageArray;
 }
 
+#pragma mark------------上拉刷新，下来加载方法；
+//下拉刷新开始时调用
+//-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+//    [self.collectionView collectionViewLayout];
+//
+//}
 
+//手指开始拖动方法；
+/*-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+ [self.collectionView tableViewDidScroll:scrollView];
+ 
+ }
+ //下拉刷新开始时调用
+ -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+ [self.tableView tableViewDidEndDragging:scrollView];
+ 
+ }
+ 
+ //开始刷新的时候掉用；
+ -(void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView{
+ _page = 1;
+ self.refreshing = YES;
+ [self performSelector:@selector(Chooserquest) withObject:nil afterDelay:1.0];
+ 
+ }
+ 
+ //上拉加载开始调用
+ -(void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView{
+ _page += 1;
+ self.refreshing = NO;
+ [self performSelector:@selector(Chooserquest) withObject:nil afterDelay:1.0];
+ 
+ }
+ 
+ //刷新完成时间
+ - (NSDate *)pullingTableViewRefreshingFinishedDate{
+ //创建一个NSDataFormatter显示刷新时间
+ return [HWTools getSystemNowDay];
+ }*/
 
 
 - (void)didReceiveMemoryWarning {

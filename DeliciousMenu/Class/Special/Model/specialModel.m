@@ -17,6 +17,7 @@
         self.makeLable = dict[@"message"];
         self.ShowImageView = dict[@"scover"];
         self.SecondID = dict[@"id"];
+//        self.xid = dict[@"xid"];
         
     }
     return self;

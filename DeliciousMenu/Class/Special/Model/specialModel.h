@@ -13,6 +13,7 @@
 @property(nonatomic, copy) NSString *makeLable;
 @property(nonatomic, copy) NSString *ShowImageView;
 @property(nonatomic, copy) NSString *SecondID;
+@property(nonatomic, copy) NSString *xid;
 
 
 -(instancetype)initWithModel:(NSDictionary *)dict;

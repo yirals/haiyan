@@ -8,8 +8,9 @@
 
 #import "specialSecondViewController.h"
 #import "specialSecondTableViewCell.h"
-
+#import "UIViewController+Comment.h"
 #import "specialSecondModel.h"
+#import "ShowViewController.h"
 
 #import <AFNetworking/AFHTTPSessionManager.h>
 
@@ -36,6 +37,7 @@ static NSString *identifier = @"identifier";
     self.title = self.nameTitle;
     [self.tableView registerNib:[UINib nibWithNibName:@"specialSecondTableViewCell" bundle:nil] forCellReuseIdentifier:identifier];
     [self.view addSubview:self.tableView];
+    [self showBackButtonWithImage:@"btn_left"];
     
     [self ConfigUpdeta];
     
@@ -53,7 +55,7 @@ static NSString *identifier = @"identifier";
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSDictionary *dic = responseObject;
-        YiralLog(@"dic === %@",dic);
+//        YiralLog(@"dic === %@",dic);
         NSArray *array = dic[@"list"];
         for (NSDictionary *dict in array) {
             specialSecondModel *model = [[specialSecondModel alloc] initWithModel:dict];
@@ -93,8 +95,15 @@ static NSString *identifier = @"identifier";
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
     
+    ShowViewController *showView = [[ShowViewController alloc] init];
     
+//    showView.strID = self.listArray[indexPath.row][@"id"];
+    specialSecondModel *special = [[specialSecondModel alloc] init];
+    showView.strID = special.rid;
+    
+    [self.navigationController pushViewController:showView animated:YES];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

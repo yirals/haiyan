@@ -16,6 +16,7 @@
         self.nameLable = dict[@"title"];
         self.ImagView = dict[@"cover"];
         self.makeLable = dict[@"message"];
+        self.rid = dict[@"id"];
     }
     return self;
 }

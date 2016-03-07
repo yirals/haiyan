@@ -10,14 +10,23 @@
 
 @implementation showModel
 
-//-(instancetype)getModelData:(NSDictionary *)model{
-//    self = [super init];
-//    if (self) {
-//        int i = 0;
-//    }
-//    return self;
-//    
-//}
+-(instancetype)initModelData:(NSDictionary *)model{
+    self = [super init];
+    if (self) {
+//        self.image = model[@"cover"];
+//        self.states = model[@"cuisine"];
+//        self.wayLable = model[@"technics"];
+//        self.diffLable = model[@"level"];
+//        self.nameLable = model[@"subject"];
+//        self.nameLable = model[@"during"];
+        self.showImageView = model[@"pic"];
+//        self.numLable = model[@"avatar"];
+        self.makeLable = model[@"note"];
+        self.ird = model[@"ird"];
+        
+    }
+    return self;
+}
 
 
 

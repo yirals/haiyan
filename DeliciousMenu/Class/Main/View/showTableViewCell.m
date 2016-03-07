@@ -8,7 +8,10 @@
 
 #import "showTableViewCell.h"
 
+#import <SDWebImage/UIImageView+WebCache.h>
+
 @interface showTableViewCell ()
+
 @property (strong, nonatomic) IBOutlet UIImageView *shouImageView;
 @property (strong, nonatomic) IBOutlet UILabel *makeLable;
 @property (strong, nonatomic) IBOutlet UILabel *numLable;
@@ -23,10 +26,18 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    self.frame = CGRectMake(0, 260, self.frame.size.width, 90);
+//    self.frame = CGRectMake(0, 260, self.frame.size.width, 90);
     
 }
 
+-(void)setModel:(showModel *)model{
+    
+    [self.shouImageView sd_setImageWithURL:[NSURL URLWithString:model.showImageView] placeholderImage:nil];
+    self.makeLable.text = model.makeLable;
+    
+    
+    
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
