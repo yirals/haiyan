@@ -1,0 +1,174 @@
+{
+"add_credit_num" = 0;
+"add_experience_num" = 0;
+"add_gold_num" = 0;
+author = "\U5c0f\U7f8a\U5c0f\U5c0f";
+avatar = "http://i3.2meiwei.com/attachment/user/avatar/2016/000/18/74/71_small.jpg";
+basefood = "\U74dc\U679c\U7c7b";
+collnum = 1144;
+cooker = 0;
+cookers = "a:1:{i:1;s:6:\"\U7092\U9505\";}";
+copyright = 1;
+cover = "http://i3.2meiwei.com/attachment/r/2010/12/25/c640_201012251516027.jpg";
+cuisine = "\U54b8\U751c";
+dateline = 1293261701;
+device = "";
+digest = 5;
+during = "\U5eff\U5206\U949f";
+edittime = 1321607710;
+edituid = 0;
+"error_code" = 1;
+"error_descr" = success;
+favnum = 185;
+id = 15097;
+ingredient = "\U539f\U6599\Uff1a<br />
+\n\U9ca4\U9c7c\U4e00\U6761<br />
+\n<br />
+\n\U914d\U6599\Uff1a<br />
+\n\U8fa3\U6912<br />
+\n\U59dc\U8471\U849c<br />
+\n\U9999\U83dc<br />
+\n<br />
+\n\U8c03\U6599\Uff1a<br />
+\n\U6cb9<br />
+\n\U76d0<br />
+\n\U9171\U6cb9<br />
+\n\U6599\U9152";
+ingredient1 =     {
+"\U9ca4\U9c7c" = "\U4e00\U6761";
+};
+ingredient2 =     {
+"\U8fa3\U6912" = "\U9002\U91cf";
+"\U9999\U83dc" = "\U9002\U91cf";
+};
+ingredient3 =     {
+"\U6599\U9152" = "\U9002\U91cf";
+"\U6cb9" = "\U9002\U91cf";
+"\U76d0" = "\U9002\U91cf";
+"\U9171\U6cb9" = "\U9002\U91cf";
+};
+ip = "";
+isfav = 0;
+isingredient = 1;
+lastactivity = 0;
+level = "\U7b80\U5355";
+mainingredient = "\U9ca4\U9c7c\U3001\U8fa3\U6912\U3001\U59dc\U8471\U849c\U3001\U9999\U83dc\U3001\U6cb9\U3001\U76d0\U3001\U9171\U6cb9\U3001\U6599\U9152\U3002";
+message = "\U5403\U9ca4\U9c7c\U6211\U559c\U6b22\U628a\U76ae\U714e\U5f97\U9ec4\U9ec4\U7684\Uff0c\U7126\U8106\U7126\U8106\U7684\U9c7c\U76ae\U6bd4\U9c7c\U8089\U66f4\U52a0\U597d\U5403\U3002";
+note = "";
+os = "";
+path = "attachment/r/2010/12/25";
+photonum = 1;
+pich = 411;
+picname = "201012251516027.jpg";
+picw = 550;
+reconum = 0;
+replynum = 12;
+reportnum = 1;
+status = 1;
+stepcount = 9;
+steps =     (
+{
+id = 99526;
+idx = 1;
+note = "\U9ca4\U9c7c\U5904\U7406\U5e72\U51c0\U3002";
+path = "attachment/recipe/201012";
+pic = "http://i3.2meiwei.com/attachment/recipe/201012/p360_201012251517131.jpg";
+picname = "201012251517131.jpg";
+rid = 15097;
+status = 0;
+},
+{
+id = 99527;
+idx = 2;
+note = "\U70ed\U9505\Uff0c\U52a0\U5165\U9002\U91cf\U82b1\U751f\U6cb9\Uff0c\U5c06\U9c7c\U653e\U8fdb\U9505\U5185\U5c0f\U706b\U6162\U6162\U714e\Uff0c\U6d12\U4e00\U70b9\U76d0\U5728\U9c7c\U8eab\U4e0a\U3002";
+path = "attachment/recipe/201012";
+pic = "http://i3.2meiwei.com/attachment/recipe/201012/p360_201012251517584.jpg";
+picname = "201012251517584.jpg";
+rid = 15097;
+status = 0;
+},
+{
+id = 99528;
+idx = 3;
+note = "\U714e\U9c7c\U7684\U540c\U65f6\U628a\U914d\U6599\U5f04\U597d\Uff1a\U849c\U62cd\U5f00\Uff0c\U59dc\U5207\U7247\Uff0c\U8fa3\U6912\U3001\U8471\U3001\U9999\U83dc\U5207\U6bb5\U3002";
+path = "attachment/recipe/201012";
+pic = "http://i3.2meiwei.com/attachment/recipe/201012/p360_201012251518295.jpg";
+picname = "201012251518295.jpg";
+rid = 15097;
+status = 0;
+},
+{
+id = 99529;
+idx = 4;
+note = "\U628a\U9c7c\U714e\U5230\U4e24\U9762\U91d1\U9ec4\Uff0c\U76db\U51fa\U3002";
+path = "attachment/recipe/201012";
+pic = "http://i3.2meiwei.com/attachment/recipe/201012/p360_201012251519171.jpg";
+picname = "201012251519171.jpg";
+rid = 15097;
+status = 0;
+},
+{
+id = 99530;
+idx = 5;
+note = "\U7528\U9505\U91cc\U5269\U4f59\U7684\U6cb9\U7206\U9999\U59dc\U8471\U849c\U548c\U8471\U767d\U3002";
+path = "attachment/recipe/201012";
+pic = "http://i3.2meiwei.com/attachment/recipe/201012/p360_201012251519382.jpg";
+picname = "201012251519382.jpg";
+rid = 15097;
+status = 0;
+},
+{
+id = 99531;
+idx = 6;
+note = "\U52a0\U5165\U8fa3\U6912\Uff0c\U52a0\U76d0\Uff0c\U7092\U51fa\U9999\U5473\U3002";
+path = "attachment/recipe/201012";
+pic = "http://i3.2meiwei.com/attachment/recipe/201012/p360_201012251519597.jpg";
+picname = "201012251519597.jpg";
+rid = 15097;
+status = 0;
+},
+{
+id = 99532;
+idx = 7;
+note = "\U52a0\U4e00\U7897\U6c34\U716e\U6cb8\U3002";
+path = "attachment/recipe/201012";
+pic = "http://i3.2meiwei.com/attachment/recipe/201012/p360_201012251520216.jpg";
+picname = "201012251520216.jpg";
+rid = 15097;
+status = 0;
+},
+{
+id = 99533;
+idx = 8;
+note = "\U628a\U714e\U597d\U7684\U9c7c\U653e\U5165\U6cb8\U6c34\U91cc\Uff0c\U52a0\U5165\U6599\U9152\Uff0c\U9171\U6cb9\U52a0\U76d6\U7116\U716e\U4e24\U5206\U949f\U3002";
+path = "attachment/recipe/201012";
+pic = "http://i3.2meiwei.com/attachment/recipe/201012/p360_201012251520477.jpg";
+picname = "201012251520477.jpg";
+rid = 15097;
+status = 0;
+},
+{
+id = 99534;
+idx = 9;
+note = "\U6536\U6c41\U3002\U52a0\U5165\U8471\U53f6\U548c\U9999\U83dc\U3002";
+path = "attachment/recipe/201012";
+pic = "http://i3.2meiwei.com/attachment/recipe/201012/p360_201012251521076.jpg";
+picname = "201012251521076.jpg";
+rid = 15097;
+status = 0;
+}
+);
+subject = "\U7ea2\U70e7\U9ca4\U9c7c";
+technics = "\U70e7";
+time = "2010-12-25";
+tips = "\U714e\U9c7c\U7684\U65f6\U5019\U52a0\U4e00\U70b9\U76d0\Uff0c\U53ef\U4ee5\U4f7f\U9c7c\U66f4\U5165\U5473\Uff0c\U540c\U65f6\U9632\U6b62\U6cb9\U6e85\U51fa\U6765\U4f24\U5230\U81ea\U5df1\U3002";
+title = "\U7ea2\U70e7\U9ca4\U9c7c";
+uid = 187471;
+username = "\U5c0f\U7f8a\U5c0f\U5c0f";
+version = "";
+verycd = 0;
+viewnum = 126;
+votenum = 0;
+"week_view_num" = 287;
+}
+

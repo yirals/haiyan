@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "specialModel.h"
+#import "showModel.h"
 @interface showSpecialView : UIView
 
 @property(nonatomic, strong) UIImageView *showImage;
@@ -24,6 +24,9 @@
 @property(nonatomic, strong) UILabel *timeLable;
 @property(nonatomic, strong) UILabel *timeLable1;
 
-@property(nonatomic, strong) specialModel *spModel;
+//@property(nonatomic, strong) showModel *model;
+
+@property(nonatomic, retain) NSDictionary *dict;
+
 
 @end

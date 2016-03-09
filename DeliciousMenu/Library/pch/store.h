@@ -6,6 +6,13 @@
 //  Copyright © 2016年 刘海艳. All rights reserved.
 //
 
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "PullingRefreshTableView.h"
+#import "HWTools.h"
+#import "ProgressHUD.h"
+#import "TimeTools.h"
+#import "WeiboSDK.h"
+#import "WXApiObject.h"
 
 #ifndef store_h
 #define store_h
@@ -14,6 +21,11 @@
 //界面宽高宏定义
 #define kWidth [UIScreen mainScreen].bounds.size.width
 #define kHeight [UIScreen mainScreen].bounds.size.height
+
+#define backGround1 [UIColor colorWithRed:150 green:150 blue:150 alpha:1.0]
+
+#define kAppKey @"2864909087"
+#define kRedirectURL @"https://api.weibo.com/oauth2/default.html"
 
 //首页网址；
 #define mainNetworkFirst @"http://api.2meiwei.com/v1/collect/29973/?idx="
@@ -33,7 +45,7 @@
 //http://api.2meiwei.com/v1/collect/list/?type=5&idx=1&size=10&appname=mw_android&appver=1.0.12&osver=5.0.2&devicename=ALE-TL00&openudid=866656021957511
 
 //专题首页
-#define specialNetWorkFirst @"http://api.2meiwei.com/v1/collect/list/?type=5&idx=1&size=10&appname=mw_android&appver=1.0.12&osver=5.0.2&devicename=ALE-TL00&openudid=866656021957511"
+#define specialNetWorkFirst @"http://api.2meiwei.com/v1/collect/list/?type=5&size=10&appname=mw_android&appver=1.0.12&osver=5.0.2&devicename=ALE-TL00&openudid=866656021957511&idx="
 
 #define backgroungColor [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:0.5]
 

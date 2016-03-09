@@ -278,7 +278,11 @@
     }
     return self;
 }
-
+- (void)dealloc{
+    
+    [self removeObserver:self forKeyPath:@"contentSize"];
+    
+}
 - (id)initWithFrame:(CGRect)frame pullingDelegate:(id<PullingRefreshTableViewDelegate>)aPullingDelegate {
     self = [self initWithFrame:frame style:UITableViewStylePlain];
     if (self) {

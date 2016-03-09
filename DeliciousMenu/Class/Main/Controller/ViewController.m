@@ -8,11 +8,14 @@
 
 #import "ViewController.h"
 #import "ShowViewController.h"
-//#import "ViewCollectionCell.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "PullingRefreshTableView.h"
 #import "store.h"
+#import "Reachability.h"
+
+#import "ZMYNetManager.h"
+
+#import "ProgressHUD.h"
 
 static NSString *Identifier = @"Identifier";
 
@@ -49,11 +52,25 @@ static NSString *Identifier = @"Identifier";
     [self updateConfig];
 }
 
-
-
-
 #pragma mark -----------数据加载
 -(void)updateConfig{
+    
+    if (![ZMYNetManager shareZMYNetManager].isZMYNetWorkRunning) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"您的网络有问题，请检查网络" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            YiralLog(@"确定");
+        }];
+        UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            YiralLog(@"取消");
+        }];
+        //
+        [alert addAction:action];
+        [alert addAction:quxiao];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+    }
     
     NSString *url = @"http://api.2meiwei.com/v1/collect/29973/?idx=";
     
@@ -64,7 +81,8 @@ static NSString *Identifier = @"Identifier";
         NSLog(@"downloadProgress = %@",downloadProgress);
      
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@"responseObject = %@",responseObject);
+        
+        [ProgressHUD show:@"正在为您加载数据"];
         NSDictionary *dict = responseObject;
         NSArray *array = dict[@"list"];
         for (NSDictionary *dic in array) {
@@ -73,9 +91,10 @@ static NSString *Identifier = @"Identifier";
             ;
             [self.imageArray addObject:dic];
             
-            [self.collectionView reloadData];
-//            NSLog(@"%lu",self.listArray.count);
         }
+        [self.collectionView reloadData];
+
+        [ProgressHUD showSuccess:@"已成功"];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error = %@",error);
     }];
@@ -93,7 +112,7 @@ static NSString *Identifier = @"Identifier";
     cell.backgroundColor = [UIColor blueColor];
     
    UILabel *snameLable = [[UILabel alloc] initWithFrame:CGRectMake(0, cell.frame.size.height*9/10, 182, cell.frame.size.height/9)];
-    snameLable.backgroundColor = [UIColor orangeColor];
+    snameLable.backgroundColor = [UIColor whiteColor];
     
      UIImageView *showImag = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 182, cell.frame.size.height*9/10)];
 
@@ -119,7 +138,6 @@ static NSString *Identifier = @"Identifier";
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
     return self.listArray.count;
-//        return 10;
     
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -132,11 +150,12 @@ static NSString *Identifier = @"Identifier";
 //点击事件
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
-//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"show" bundle:nil];
-// 
-//    ShowViewController *showVC = [sb instantiateViewControllerWithIdentifier:@"showSB"];
+
+    
     ShowViewController *showVC = [[ShowViewController alloc] init];
-    NSLog(@"%@ %ld",self.listArray[indexPath.row], indexPath.row);
+
+    showVC.hidesBottomBarWhenPushed = YES;
+    
     showVC.strID = self.listArray[indexPath.row][@"id"];
     
  
@@ -196,47 +215,6 @@ static NSString *Identifier = @"Identifier";
     }
     return _imageArray;
 }
-
-#pragma mark------------上拉刷新，下来加载方法；
-//下拉刷新开始时调用
-//-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-//    [self.collectionView collectionViewLayout];
-//
-//}
-
-//手指开始拖动方法；
-/*-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
- [self.collectionView tableViewDidScroll:scrollView];
- 
- }
- //下拉刷新开始时调用
- -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
- [self.tableView tableViewDidEndDragging:scrollView];
- 
- }
- 
- //开始刷新的时候掉用；
- -(void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView{
- _page = 1;
- self.refreshing = YES;
- [self performSelector:@selector(Chooserquest) withObject:nil afterDelay:1.0];
- 
- }
- 
- //上拉加载开始调用
- -(void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView{
- _page += 1;
- self.refreshing = NO;
- [self performSelector:@selector(Chooserquest) withObject:nil afterDelay:1.0];
- 
- }
- 
- //刷新完成时间
- - (NSDate *)pullingTableViewRefreshingFinishedDate{
- //创建一个NSDataFormatter显示刷新时间
- return [HWTools getSystemNowDay];
- }*/
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

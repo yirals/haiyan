@@ -14,13 +14,19 @@
 #import "showModel.h"
 #import "UIViewController+Comment.h"
 
+#import "ZMYNetManager.h"
+
 static NSString *identifier = @"identifier";
 
 
 @interface ShowViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+
 //展示图片
 
 @property(nonatomic, strong) UITableView *tableview;
+
+
 
 @property(nonatomic, strong) NSDictionary *dictory;
 
@@ -38,10 +44,9 @@ static NSString *identifier = @"identifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    self.title = self.dictory[@"subject"];
-//    self.title = @"rdertyiu";
+
+   
+    self.title = @"具体实现";
     self.view.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:235/255.0];
     
     [self showBackButtonWithImage:@"btn_left"];
@@ -63,7 +68,24 @@ static NSString *identifier = @"identifier";
 #pragma mark--------------加载数据
 
 -(void)configUpDate{
-    //[NSString stringWithFormat:@"%@%@/&appname=mw_android&appver=1.0.12&osver=5.0.2&devicename=ALE-TL00&openudid=866656021957511",specialNetWorkingThird,self.listArray]
+    
+    if (![ZMYNetManager shareZMYNetManager].isZMYNetWorkRunning) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"您的网络有问题，请检查网络" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            YiralLog(@"确定");
+        }];
+        UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            YiralLog(@"取消");
+        }];
+        [alert addAction:action];
+        [alert addAction:quxiao];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+    }
+
+
     
     
     AFHTTPSessionManager *manger = [AFHTTPSessionManager manager];
@@ -73,8 +95,10 @@ static NSString *identifier = @"identifier";
         YiralLog(@"%@",downloadProgress)
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //        YiralLog(@"%@",responseObject);
+        self.showVC.dict = responseObject;
+        
         self.dictory = responseObject;
-        YiralLog(@"self.dictory === %@",self.dictory);
+//        YiralLog(@"self.dictory === %@",self.dictory);
         NSArray *array = self.dictory[@"steps"];
         for (NSDictionary *dict in array) {
             showModel *modelShow = [[showModel alloc]initModelData:dict];
@@ -84,11 +108,16 @@ static NSString *identifier = @"identifier";
         
         
               [self.tableview reloadData];
+        
+        [self.showVC reloadInputViews];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         YiralLog(@"%@",error);
     }];
     
-    
+//    [self.tableview tableViewDidFinishedLoading];
+//    self.tableview.reachedTheEnd = NO;
+//    [self.tableview reloadData];
+//    
 }
 
 
@@ -116,6 +145,7 @@ static NSString *identifier = @"identifier";
 
 
 
+
 #pragma mark-----------懒加载
 
 -(UITableView *)tableview{
@@ -138,13 +168,6 @@ static NSString *identifier = @"identifier";
 -(showSpecialView *)showVC{
     if (_showVC == nil) {
         _showVC = [[showSpecialView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeight *0.7)];
-        
-        self.showVC.diffLable1.text = self.dictory[@"level"];
-        self.showVC.timeLable1.text = self.dictory[@"during"];
-        self.showVC.tasteLable1.text = self.dictory[@"cuisine"];
-        self.showVC.waysLable1.text = self.dictory[@"technics"];
-        
-        [self.showVC.showImage sd_setImageWithURL:[NSURL URLWithString:self.dictory[@"cover"]] placeholderImage:nil];
         
     }
     return _showVC;
@@ -181,6 +204,14 @@ static NSString *identifier = @"identifier";
     }
     return _model;
 }
+
+//- ( void )dealloc
+//{
+//    [ header free ];
+//    [ footer free ];
+//}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

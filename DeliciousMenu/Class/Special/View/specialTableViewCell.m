@@ -10,7 +10,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface specialTableViewCell ()
-@property (strong, nonatomic) IBOutlet UIImageView *showImageView;
+//@property (strong, nonatomic) IBOutlet UIImageView *showImageView;
 
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLable;
@@ -29,7 +29,7 @@
 
 -(void)setModel:(specialModel *)model{
     
-    [self.showImageView sd_setImageWithURL:[NSURL URLWithString:model.ShowImageView] placeholderImage:nil];
+//    [self.showImageView sd_setImageWithURL:[NSURL URLWithString:model.ShowImageView] placeholderImage:nil];
 //    YiralLog(@"%@",model.ShowImageView);
     
     self.titleLable.text = model.nameLable;

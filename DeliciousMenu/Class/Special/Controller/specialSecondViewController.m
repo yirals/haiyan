@@ -16,9 +16,14 @@
 
 
 static NSString *identifier = @"identifier";
-@interface specialSecondViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface specialSecondViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate>
 
-@property(nonatomic, strong) UITableView *tableView;
+{
+    NSInteger _page;
+}
+@property(nonatomic, assign) BOOL refreshing;
+@property(nonatomic, strong) PullingRefreshTableView *tableView;
+
 @property(nonatomic, strong) NSMutableArray *listArray;
 
 @end
@@ -30,12 +35,13 @@ static NSString *identifier = @"identifier";
     // Do any additional setup after loading the view.
     //注册cell;
 //    self.tabBarItem.
-    
+    _page = 1;
     self.view.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:0.5];
 
     
     self.title = self.nameTitle;
     [self.tableView registerNib:[UINib nibWithNibName:@"specialSecondTableViewCell" bundle:nil] forCellReuseIdentifier:identifier];
+    [self.tableView launchRefreshing];
     [self.view addSubview:self.tableView];
     [self showBackButtonWithImage:@"btn_left"];
     
@@ -46,32 +52,44 @@ static NSString *identifier = @"identifier";
 
 #pragma mark------------数据的加载
 -(void)ConfigUpdeta{
-    //http://api.2meiwei.com/v1/recipe/100144/&appname=mw_android&appver=1.0.12&osver=5.0.2&devicename=ALE-TL00&openudid=866656021957511
+   
     
     AFHTTPSessionManager *mangaer = [AFHTTPSessionManager manager];
     mangaer.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    [mangaer GET:[NSString stringWithFormat:@"http://api.2meiwei.com/v1/collect/%@/?idx=1&size=15&appname=mw_android&appver=1.0.12&osver=5.0.2&devicename=ALE-TL00&openudid=866656021957511",self.IDStr] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [mangaer GET:[NSString stringWithFormat:@"http://api.2meiwei.com/v1/collect/%@/?idx=%lu&size=15&appname=mw_android&appver=1.0.12&osver=5.0.2&devicename=ALE-TL00&openudid=866656021957511",self.IDStr,_page] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         YiralLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        [ProgressHUD show:@"正在加载中。。。。"];
+        
         NSDictionary *dic = responseObject;
-//        YiralLog(@"dic === %@",dic);
+        YiralLog(@"dic === %@",dic);
         NSArray *array = dic[@"list"];
-        for (NSDictionary *dict in array) {
-            specialSecondModel *model = [[specialSecondModel alloc] initWithModel:dict];
-            [self.listArray addObject:model];
-            [self.tableView reloadData];
+        
+        if (self.refreshing) {
+            if (self.listArray.count > 0) {
+                [self.listArray removeAllObjects];
+            }
         }
         
         
+        for (NSDictionary *dict in array) {
+            specialSecondModel *model = [[specialSecondModel alloc] initWithModel:dict];
+            [self.listArray addObject:model];
+        }
         
         
-//        YiralLog(@"responseObject ====== %@",responseObject);
+        [ProgressHUD showSuccess:@"已完成"];
         
+        [self.tableView tableViewDidFinishedLoading];
+        self.tableView.reachedTheEnd = NO;
+        [self.tableView reloadData];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         YiralLog(@"%@",error);
     }];
+    
+
     
 }
 
@@ -98,10 +116,12 @@ static NSString *identifier = @"identifier";
 
     
     ShowViewController *showView = [[ShowViewController alloc] init];
+
+    specialSecondModel *special = self.listArray[indexPath.row];
+    showView.hidesBottomBarWhenPushed = YES;
     
-//    showView.strID = self.listArray[indexPath.row][@"id"];
-    specialSecondModel *special = [[specialSecondModel alloc] init];
     showView.strID = special.rid;
+    
     
     [self.navigationController pushViewController:showView animated:YES];
 }
@@ -110,12 +130,47 @@ static NSString *identifier = @"identifier";
     return 130;
 }
 
+#pragma mark------------------上拉刷新与下拉加载
+//手指开始拖动方法；
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self.tableView tableViewDidScroll:scrollView];
+    
+}
+//下拉刷新开始时调用
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    [self.tableView tableViewDidEndDragging:scrollView];
+    
+}
+
+//开始刷新的时候掉用；
+-(void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView{
+    _page = 1;
+    self.refreshing = YES;
+    [self performSelector:@selector(ConfigUpdeta) withObject:nil afterDelay:1.0];
+    
+}
+
+//上拉加载开始调用
+-(void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView{
+    _page += 1;
+    self.refreshing = NO;
+    [self performSelector:@selector(ConfigUpdeta) withObject:nil afterDelay:1.0];
+    
+}
+
+//刷新完成时间
+- (NSDate *)pullingTableViewRefreshingFinishedDate{
+    //创建一个NSDataFormatter显示刷新时间
+    return [TimeTools getNowDate];
+}
+
+
 
 #pragma mark----------懒加载
 
--(UITableView *)tableView{
+-(PullingRefreshTableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+        self.tableView = [[PullingRefreshTableView alloc] initWithFrame:CGRectMake(0, 64, kWidth, kHeight) pullingDelegate:self];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
     }
@@ -130,6 +185,19 @@ static NSString *identifier = @"identifier";
     return _listArray;
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    [ProgressHUD dismiss];
+    
+}
+
+//
+//-(void)dealloc{
+//    
+//    [];
+//    [];
+//}
 
 
 

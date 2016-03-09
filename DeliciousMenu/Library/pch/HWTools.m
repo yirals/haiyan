@@ -24,11 +24,13 @@
 //}
 + (NSString *)getDateFromString:(NSString *)timestamp{
     
+    
     NSTimeInterval timeInterval = [timestamp doubleValue];
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy.MM.dd"];
     NSString *timeStr = [dateFormatter stringFromDate:date];
+    
     return timeStr;
 }
 

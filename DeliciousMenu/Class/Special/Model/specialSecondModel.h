@@ -12,6 +12,7 @@
 @property(nonatomic, copy) NSString *ImagView;
 @property(nonatomic, copy) NSString *nameLable;
 @property(nonatomic, copy) NSString *makeLable;
+
 @property(nonatomic, copy) NSString *rid;
 
 

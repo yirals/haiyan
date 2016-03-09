@@ -82,11 +82,3 @@ typedef enum {
 - (NSDate *)pullingTableViewLoadingFinishedDate;
 @end
 
-//Usage example
-/*
-_tableView = [[PullingRefreshTableView alloc] initWithFrame:frame pullingDelegate:aPullingDelegate];
-[self.view addSubview:_tableView];
-_tableView.autoScrollToNextPage = NO;
-_tableView.delegate = self;
-_tableView.dataSource = self;
-*/

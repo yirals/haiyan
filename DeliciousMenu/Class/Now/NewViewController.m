@@ -7,7 +7,7 @@
 //
 
 #import "NewViewController.h"
-
+#import "ZMYNetManager.h"
 @interface NewViewController ()
 
 //@property(nonatomic, retain) UIWebView *webView;
@@ -30,7 +30,24 @@
 //    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://m.benlai.com/showSite"]];
 //    [self.webView loadRequest:request];
 //    [self.view addSubview:self.webView];
-//
+    
+    if (![ZMYNetManager shareZMYNetManager].isZMYNetWorkRunning) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"您的网络有问题，请检查网络" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            YiralLog(@"确定");
+        }];
+        UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            YiralLog(@"取消");
+        }];
+        [alert addAction:action];
+        [alert addAction:quxiao];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+    }
+
+
     
     UIWebView *webView = [[UIWebView alloc] init];
     webView.frame = self.view.frame;

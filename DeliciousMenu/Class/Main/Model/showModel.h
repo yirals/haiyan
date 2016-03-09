@@ -20,6 +20,8 @@
 @property(nonatomic, copy) NSString *numLable;
 @property(nonatomic, copy) NSString *makeLable;
 @property(nonatomic, copy) NSString *ird;
+@property(nonatomic, copy) NSString *idx;
+
 
 -(instancetype)initModelData:(NSDictionary *)model;
 

@@ -11,17 +11,30 @@
 #import "MainViewController.h"
 #import "SpecialViewController.h"
 #import "NewViewController.h"
+#import <BmobSDK/Bmob.h>
+#import "WeiboSDK.h"
+
+#import "WXApi.h"
 
 
-@interface AppDelegate ()
+@interface AppDelegate ()<WeiboSDKDelegate,WBHttpRequestDelegate>
 
 @end
 
+
 @implementation AppDelegate
 
-
+//@synthesize wbtoken;
+@synthesize wbtoken;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [Bmob registerWithAppKey:@"57b6706af8d693d70542b1e63d7a4cff"];
+    
+    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK registerApp:kAppKey];
+    
+    [WXApi registerApp:@"wx5a390c558437d68c"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     UITabBarController *tabBar = [[UITabBarController alloc] init];
@@ -37,33 +50,59 @@
     newVC.tabBarItem.title = @"生鲜";
     newVC.tabBarController.title = @"生鲜";
     
-    newVC.tabBarItem.image = [UIImage imageNamed:@"53-house"];
+    newVC.tabBarItem.image = [UIImage imageNamed:@"02-redo-1"];
     
     MainViewController *mineVC = [[MainViewController alloc] init];
     UINavigationController *MainViewNav = [[UINavigationController alloc] initWithRootViewController:mineVC];
     MainViewNav.tabBarItem.title = @"个人";
     MainViewNav.tabBarController.title = @"个人";
-    MainViewNav.tabBarItem.image = [UIImage imageNamed:@"53-house"];
+    MainViewNav.tabBarItem.image = [UIImage imageNamed:@"29-heart-1"];
     
     SpecialViewController *specialVC = [[SpecialViewController alloc] init];
     UINavigationController *SpecialViewNav = [[UINavigationController alloc] initWithRootViewController:specialVC];
     specialVC.tabBarItem.title = @"专题";
     specialVC.tabBarController.title = @"专题";
-    specialVC.tabBarItem.image = [UIImage imageNamed:@"53-house"];
+    specialVC.tabBarItem.image = [UIImage imageNamed:@"20-gear2-1"];
     
     tabBar.viewControllers = @[ViewNav,newViewNav,SpecialViewNav,MainViewNav];
     tabBar.delegate = self;
     tabBar.tabBar.tintColor = [UIColor orangeColor];
-    tabBar.tabBar.barTintColor = [UIColor redColor];
+    tabBar.tabBar.barTintColor = [UIColor colorWithRed:200/255.0 green:200/255.0 blue:200/255.0 alpha:1.0];
     self.window.rootViewController = tabBar;
     self.window.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:235/255.0];
     
     return YES;
 }
 
+#pragma mark --------------------集成微博方法
+
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    return [WeiboSDK handleOpenURL:url delegate:self];
+}
+
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    return [WeiboSDK handleOpenURL:url delegate:self];
+    
+}
+
+-(void)didReceiveWeiboRequest:(WBBaseRequest *)request{
+    AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [WeiboSDK logOutWithToken:myDelegate.wbtoken delegate:self withTag:@"user1"];
+}
+-(void)didReceiveWeiboResponse:(WBBaseResponse *)response{
+    AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [WeiboSDK logOutWithToken:myDelegate.wbtoken delegate:self withTag:@"user1"];
+    
+}
+
+
+
+
+
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
     
     
     

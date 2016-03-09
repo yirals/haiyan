@@ -34,6 +34,7 @@
     
     [self.shouImageView sd_setImageWithURL:[NSURL URLWithString:model.showImageView] placeholderImage:nil];
     self.makeLable.text = model.makeLable;
+    self.numLable.text = model.idx;
     
     
     

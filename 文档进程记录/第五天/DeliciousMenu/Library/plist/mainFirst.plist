@@ -1,0 +1,197 @@
+{
+count = 10;
+cover = "attachment/collect/201101/201101171554034.jpg";
+dateline = 1292470375;
+descr = 0;
+"error_code" = 1;
+"error_descr" = success;
+favnum = 46;
+id = 29973;
+idx = 1;
+innum = 649;
+lastactivity = 1321608955;
+list =     (
+{
+author = "\U8001\U6768\U7684\U53a8\U623f";
+ccover = "http://i3.2meiwei.com/attachment/r/2011/04/30/c240_201104301408069.jpg";
+count = 0;
+cover = "http://i3.2meiwei.com/attachment/r/2011/04/30/c240_201104301408069.jpg";
+favnum = 137;
+id = 22981;
+likenum = 0;
+mainingredient = "\U571f\U9e21 \U3001\U5c0f\U571f\U8c46\U3001\U8471\U59dc\U849c\U3001\U5e72\U8fa3\U6912\U3001\U516b\U89d2\U3001\U82b1\U6912\U3001\U767d\U9152\U3001\U7389\U7c73\U9762\U56e2\U3001\U76d0\U3001\U4e94\U9999\U7c89\U3001\U5473\U7cbe\U3001\U7cd6\U3001\U8001\U62bd\U3002";
+message = "\U571f\U9e21 \U3001\U5c0f\U571f\U8c46\U3001\U8471\U59dc\U849c\U3001\U5e72\U8fa3\U6912\U3001\U516b\U89d2\U3001\U82b1\U6912\U3001\U767d\U9152\U3001\U7389\U7c73\U9762\U56e2\U3001\U76d0\U3001\U4e94\U9999\U7c89\U3001\U5473\U7cbe\U3001\U7cd6\U3001\U8001\U62bd\U3002";
+replynum = 22;
+status = 0;
+title = "\U9e21\U8089\U5c0f\U571f\U8c46\U8d34\U997c\U5b50";
+uid = 84674;
+viewnum = 116;
+},
+{
+author = "\U82bd\U82bd\U4e0d\U4e56";
+ccover = "http://i3.2meiwei.com/attachment/r/2011/05/13/c240_201105132115194.jpg";
+count = 0;
+cover = "http://i3.2meiwei.com/attachment/r/2011/05/13/c240_201105132115194.jpg";
+favnum = 407;
+id = 23870;
+likenum = 0;
+mainingredient = "\U897f\U7ea2\U67ff\U3001\U9e21\U86cb\U3001\U5c0f\U8471\U3002";
+message = "\U897f\U7ea2\U67ff\U3001\U9e21\U86cb\U3001\U5c0f\U8471\U3002";
+replynum = 18;
+status = 0;
+title = "\U756a\U8304\U7092\U86cb";
+uid = 313751;
+viewnum = 94;
+},
+{
+author = "\U8349\U8393";
+ccover = "http://i3.2meiwei.com/attachment/r/2010/12/25/c240_201012251602175.jpg";
+count = 0;
+cover = "http://i3.2meiwei.com/attachment/r/2010/12/25/c240_201012251602175.jpg";
+favnum = 241;
+id = 15099;
+likenum = 0;
+mainingredient = "\U83e0\U83dc\U3001\U9e21\U86cb\U3001\U849c\U7c73\U3001\U76d0\U3001\U5473\U7cbe\U3002";
+message = "\U83e0\U83dc\U3001\U9e21\U86cb\U3001\U849c\U7c73\U3001\U76d0\U3001\U5473\U7cbe\U3002";
+replynum = 15;
+status = 0;
+title = "\U83e0\U83dc\U7092\U9e21\U86cb";
+uid = 19344;
+viewnum = 132;
+},
+{
+author = "\U5c0f\U7f8a\U5c0f\U5c0f";
+ccover = "http://i3.2meiwei.com/attachment/r/2010/12/25/c240_201012251516027.jpg";
+count = 0;
+cover = "http://i3.2meiwei.com/attachment/r/2010/12/25/c240_201012251516027.jpg";
+favnum = 185;
+id = 15097;
+likenum = 0;
+mainingredient = "\U9ca4\U9c7c\U3001\U8fa3\U6912\U3001\U59dc\U8471\U849c\U3001\U9999\U83dc\U3001\U6cb9\U3001\U76d0\U3001\U9171\U6cb9\U3001\U6599\U9152\U3002";
+message = "\U9ca4\U9c7c\U3001\U8fa3\U6912\U3001\U59dc\U8471\U849c\U3001\U9999\U83dc\U3001\U6cb9\U3001\U76d0\U3001\U9171\U6cb9\U3001\U6599\U9152\U3002";
+replynum = 12;
+status = 0;
+title = "\U7ea2\U70e7\U9ca4\U9c7c";
+uid = 187471;
+viewnum = 126;
+},
+{
+author = gaopingzhao;
+ccover = "http://i3.2meiwei.com/attachment/r/2010/12/25/c240_201012251419092.jpg";
+count = 0;
+cover = "http://i3.2meiwei.com/attachment/r/2010/12/25/c240_201012251419092.jpg";
+favnum = 176;
+id = 15091;
+likenum = 0;
+mainingredient = "\U5377\U5fc3\U83dc\U3001\U732a\U8089\U3001\U8471\U3001\U59dc\U3001\U849c\U3001\U751f\U6cb9\U3001\U6599\U9152\U3001\U751f\U62bd\U3001\U8001\U62bd\U3001\U76d0\U3001\U9e21\U7cbe\U3002";
+message = "\U5377\U5fc3\U83dc\U3001\U732a\U8089\U3001\U8471\U3001\U59dc\U3001\U849c\U3001\U751f\U6cb9\U3001\U6599\U9152\U3001\U751f\U62bd\U3001\U8001\U62bd\U3001\U76d0\U3001\U9e21\U7cbe\U3002";
+replynum = 11;
+status = 0;
+title = "\U5377\U5fc3\U83dc\U7092\U8089";
+uid = 48172;
+viewnum = 102;
+},
+{
+author = "\U8349\U8393";
+ccover = "http://i3.2meiwei.com/attachment/r/2010/12/25/c240_201012251610087.jpg";
+count = 0;
+cover = "http://i3.2meiwei.com/attachment/r/2010/12/25/c240_201012251610087.jpg";
+favnum = 262;
+id = 15101;
+likenum = 0;
+mainingredient = "\U571f\U8c46\U3001\U80e1\U841d\U535c\U3001\U7626\U8089\U3001\U6599\U9152\U3001\U6dc0\U7c89\U3001\U9171\U6cb9\U3001\U76d0\U3001\U918b\U3001\U9e21\U7cbe\U3002";
+message = "\U571f\U8c46\U3001\U80e1\U841d\U535c\U3001\U7626\U8089\U3001\U6599\U9152\U3001\U6dc0\U7c89\U3001\U9171\U6cb9\U3001\U76d0\U3001\U918b\U3001\U9e21\U7cbe\U3002";
+replynum = 11;
+status = 0;
+title = "\U80e1\U841d\U535c\U4e1d\U7092\U571f\U8c46\U4e1d";
+uid = 19344;
+viewnum = 110;
+},
+{
+author = gaopingzhao;
+ccover = "http://i3.2meiwei.com/attachment/r/2010/12/24/c240_201012241237183.jpg";
+count = 0;
+cover = "http://i3.2meiwei.com/attachment/r/2010/12/24/c240_201012241237183.jpg";
+favnum = 44;
+id = 15052;
+likenum = 0;
+mainingredient = "\U80e1\U841d\U535c\U3001\U828b\U5934\U3001\U732a\U8089\U3001\U8471\U59dc\U849c\U3001\U6c34\U53d1\U6728\U8033\U3001\U82b1\U751f\U6cb9\U3001\U6599\U9152\U3001\U751f\U62bd\U3001\U7cd6\U3001\U918b\U3001\U76d0\U3001\U9e21\U7cbe\U3002";
+message = "\U80e1\U841d\U535c\U3001\U828b\U5934\U3001\U732a\U8089\U3001\U8471\U59dc\U849c\U3001\U6c34\U53d1\U6728\U8033\U3001\U82b1\U751f\U6cb9\U3001\U6599\U9152\U3001\U751f\U62bd\U3001\U7cd6\U3001\U918b\U3001\U76d0\U3001\U9e21\U7cbe\U3002";
+replynum = 7;
+status = 0;
+title = "\U828b\U9999\U80e1\U841d\U535c\U7092\U8089";
+uid = 48172;
+viewnum = 75;
+},
+{
+author = rascal;
+ccover = "http://i3.2meiwei.com/attachment/r/2010/12/27/c240_201012270843596.jpg";
+count = 0;
+cover = "http://i3.2meiwei.com/attachment/r/2010/12/27/c240_201012270843596.jpg";
+favnum = 21;
+id = 15149;
+likenum = 0;
+mainingredient = "\U9752\U9c7c\U3001\U571f\U8c46\U3001\U8471\U3001\U59dc\U3001\U849c\U3001\U5927\U6599\U3001\U76d0\U3001\U5473\U7cbe\U3001\U5341\U4e09\U9999\U3001\U918b\U3001\U9171\U6cb9\U3002";
+message = "\U9752\U9c7c\U3001\U571f\U8c46\U3001\U8471\U3001\U59dc\U3001\U849c\U3001\U5927\U6599\U3001\U76d0\U3001\U5473\U7cbe\U3001\U5341\U4e09\U9999\U3001\U918b\U3001\U9171\U6cb9\U3002";
+replynum = 6;
+status = 0;
+title = "\U9752\U9c7c\U7096\U571f\U8c46";
+uid = 283749;
+viewnum = 394;
+},
+{
+author = "\U8349\U8393";
+ccover = "http://i3.2meiwei.com/attachment/r/2010/12/24/c240_201012240912021.jpg";
+count = 0;
+cover = "http://i3.2meiwei.com/attachment/r/2010/12/24/c240_201012240912021.jpg";
+favnum = 216;
+id = 15037;
+likenum = 0;
+mainingredient = "\U8089\U672b\U3001\U56db\U5b63\U8c46\U3001\U59dc\U849c\U3001\U9171\U6cb9\U3001\U76d0\U3001\U5e72\U8fa3\U6912\U3001\U82b1\U6912\U3002
+\n";
+message = "\U8089\U672b\U3001\U56db\U5b63\U8c46\U3001\U59dc\U849c\U3001\U9171\U6cb9\U3001\U76d0\U3001\U5e72\U8fa3\U6912\U3001\U82b1\U6912\U3002
+\n";
+replynum = 12;
+status = 0;
+title = "\U8089\U672b\U56db\U5b63\U8c46";
+uid = 19344;
+viewnum = 133;
+},
+{
+author = gaopingzhao;
+ccover = "http://i3.2meiwei.com/attachment/r/2010/12/22/c240_201012221154197.jpg";
+count = 0;
+cover = "http://i3.2meiwei.com/attachment/r/2010/12/22/c240_201012221154197.jpg";
+favnum = 114;
+id = 14946;
+likenum = 0;
+mainingredient = "\U82b9\U83dc\U3001\U9e21\U86cb\U3001\U76d0\U3001\U82b1\U751f\U6cb9\U3001\U6599\U9152\U3002";
+message = "\U82b9\U83dc\U3001\U9e21\U86cb\U3001\U76d0\U3001\U82b1\U751f\U6cb9\U3001\U6599\U9152\U3002";
+replynum = 9;
+status = 0;
+title = "\U9999\U82b9\U7092\U9e21\U86cb";
+uid = 48172;
+viewnum = 89;
+}
+);
+message = "\U5bb6\U5e38\U83dc";
+pic = "";
+q = "";
+recipecolumn = 0;
+reconum = 0;
+replynum = 0;
+size = 10;
+spec = 0;
+start = 0;
+status = 2;
+stitle = "";
+subject = "\U5bb6\U5e38\U83dc";
+time = "2010-12-16";
+title = "\U5bb6\U5e38\U83dc";
+total = 643;
+type = recipe;
+uid = 442460;
+username = "\U7f8e\U98df\U83dc\U83dc";
+viewnum = 472;
+}
+

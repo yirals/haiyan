@@ -7,6 +7,7 @@
 //
 
 #import "showSpecialView.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface showSpecialView ()
 
@@ -14,7 +15,6 @@
 
 
 #define backGround [UIColor colorWithRed:180 green:180 blue:180 alpha:1.0]
-#define backGround1 [UIColor colorWithRed:150 green:150 blue:150 alpha:1.0]
 
 
 
@@ -55,6 +55,33 @@
 
 }
 
+//-(void)setModel:(showModel *)model{
+//    
+//    self.diffLable1.text = model.diffLable;
+//    self.timeLable1.text = model.timeLable;
+//    self.tasteLable1.text = model.states;
+//    self.waysLable.text = model.wayLable;
+//    self.nameLable.text = model.nameLable;
+//    
+//    [self.showImage sd_setImageWithURL:[NSURL URLWithString:model.image] placeholderImage:nil];
+//    
+//}
+
+
+-(void)setDict:(NSDictionary *)dict{
+    self.diffLable1.text = dict[@"level"];
+    self.timeLable1.text = dict[@"during"];
+    self.tasteLable1.text = dict[@"cuisine"];
+    self.waysLable1.text = dict[@"technics"];
+    self.nameLable.text = dict[@"subject"];
+    
+    [self.showImage sd_setImageWithURL:[NSURL URLWithString:dict[@"cover"]] placeholderImage:nil];
+    
+
+    
+    
+}
+
 -(UIImageView *)showImage{
     if (_showImage == nil) {
         self.showImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, kWidth*0.6)];
@@ -77,7 +104,7 @@
 -(UILabel *)tasteLable{
     if (_tasteLable == nil) {
         _tasteLable = [[UILabel alloc]initWithFrame:CGRectMake(kWidth/15, kWidth*0.76, kWidth/5, kWidth/9)];
-        _tasteLable.backgroundColor = backGround1;
+        _tasteLable.backgroundColor = [UIColor orangeColor];
         _tasteLable.text = @"口味";
 //        _tasteLable.textAlignment = uite
 //        _tasteLable.font = [UIFont fontWithName:@"Helvetica" size:15.0];
@@ -86,15 +113,16 @@
         _tasteLable.textAlignment=NSTextAlignmentCenter;
         
         
+        
     }
     return _tasteLable;
 }
 -(UILabel *)tasteLable1{
     if (_tasteLable1 == nil) {
         _tasteLable1 = [[UILabel alloc]initWithFrame:CGRectMake(kWidth/15, kWidth*0.76+kWidth/9+2, kWidth/5, kWidth/9)];
-        _tasteLable1.backgroundColor = [UIColor orangeColor];
+        _tasteLable1.backgroundColor = backGround1;
         
-        
+        _tasteLable1.textAlignment=NSTextAlignmentCenter;
         
     }
     return _tasteLable1;
@@ -112,7 +140,8 @@
 -(UILabel *)waysLable1{
     if (_waysLable1 == nil) {
         _waysLable1 = [[UILabel alloc]initWithFrame:CGRectMake(kWidth/15+kWidth/5+2, kWidth*0.76+kWidth/9+2, kWidth/5, kWidth/9)];
-        _waysLable1.backgroundColor = [UIColor orangeColor];
+        _waysLable1.backgroundColor = backGround1;
+        _waysLable1.textAlignment=NSTextAlignmentCenter;
         
     }
     return _waysLable1;
@@ -131,7 +160,8 @@
 -(UILabel *)timeLable1{
     if (_timeLable1 == nil) {
         _timeLable1 = [[UILabel alloc]initWithFrame:CGRectMake(kWidth/15+kWidth/5*2 +4, kWidth*0.76+kWidth/9+2 , kWidth/5, kWidth/9)];
-        _timeLable1.backgroundColor = [UIColor orangeColor];
+        _timeLable1.backgroundColor = backGround1;
+        _timeLable1.textAlignment=NSTextAlignmentCenter;
         
     }
     return _timeLable1;
@@ -150,7 +180,8 @@
 -(UILabel *)diffLable1{
     if (_diffLable1 == nil) {
         _diffLable1 = [[UILabel alloc]initWithFrame:CGRectMake(kWidth/15 + kWidth/5*3 + 6, kWidth*0.76 +kWidth/9 +2, kWidth/5, kWidth/9)];
-        _diffLable1.backgroundColor = [UIColor orangeColor];
+        _diffLable1.backgroundColor = backGround1;
+        _diffLable1.textAlignment=NSTextAlignmentCenter;
         
     }
     return _diffLable1;
