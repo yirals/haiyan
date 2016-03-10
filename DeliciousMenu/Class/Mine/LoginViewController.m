@@ -80,6 +80,8 @@
     
     [ProgressHUD show:@"正在登录"];
     
+    [BmobUser loginWithUsernameInBackground:@"小明"password:@"123456"];
+    
     [BmobUser loginWithUsernameInBackground:self.resignTF.text password:self.resignPass.text block:^(BmobUser *user, NSError *error) {
         if (user) {
             YiralLog(@"%@",self.resignTF.text);
@@ -94,9 +96,11 @@
     [self.navigationController pushViewController:VC animated:YES];
     
 }
+//在视图即将消失的时候，收起第三方菊花
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    
     [ProgressHUD dismiss];
     
     
@@ -109,6 +113,14 @@
     
 }
 
+//点击右下角回收键盘；
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+    
+}
 
 //点击空白处回收键盘；
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -118,11 +130,6 @@
     
 }
 
-//点击右下角回收键盘；
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
-    return YES;
-}
 
 
 

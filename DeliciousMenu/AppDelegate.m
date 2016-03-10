@@ -13,11 +13,12 @@
 #import "NewViewController.h"
 #import <BmobSDK/Bmob.h>
 #import "WeiboSDK.h"
+//#import ""
 
 #import "WXApi.h"
 
 
-@interface AppDelegate ()<WeiboSDKDelegate,WBHttpRequestDelegate>
+@interface AppDelegate ()<WeiboSDKDelegate,WBHttpRequestDelegate,WXApiDelegate>
 
 @end
 
@@ -33,7 +34,9 @@
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:kAppKey];
     
-    [WXApi registerApp:@"wx5a390c558437d68c"];
+    //微信分享
+    [WXApi registerApp:kWXAppID];
+    
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -78,12 +81,29 @@
 
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-    return [WeiboSDK handleOpenURL:url delegate:self];
+    
+    if ([WXApi handleOpenURL:url delegate:self]) {
+        return YES;
+        
+    }else if ([WeiboSDK handleOpenURL:url delegate:self]){
+        return YES;
+    }else
+    
+
+        return YES;
+   
 }
 
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-    return [WeiboSDK handleOpenURL:url delegate:self];
+    
+    if ([WXApi handleOpenURL:url delegate:self]) {
+        return YES;
+    }else if ([WeiboSDK handleOpenURL:url delegate:self]){
+        return YES;
+    }else
+        return YES;
+//    return [WeiboSDK handleOpenURL:url delegate:self];
     
 }
 
@@ -91,6 +111,7 @@
     AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
     [WeiboSDK logOutWithToken:myDelegate.wbtoken delegate:self withTag:@"user1"];
 }
+
 -(void)didReceiveWeiboResponse:(WBBaseResponse *)response{
     AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
     [WeiboSDK logOutWithToken:myDelegate.wbtoken delegate:self withTag:@"user1"];
@@ -98,8 +119,16 @@
 }
 
 
-
-
+////集成微信方法；
+//-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+//    
+//    return [WXApi handleOpenURL:url delegate:self];
+//}
+//-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+//    
+//    return [WXApi handleOpenURL:url delegate:self];
+//}
+//
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 

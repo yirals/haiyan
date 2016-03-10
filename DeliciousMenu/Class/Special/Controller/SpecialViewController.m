@@ -54,7 +54,9 @@
     self.tableView.tableHeaderView = self.imageVC;
     
     [self.view addSubview:self.tableView];
+    //上拉刷新下拉加载；
     [self.tableView launchRefreshing];
+    
     [self requestData];
 }
 
@@ -201,7 +203,7 @@
 -(PullingRefreshTableView *)tableView{
     if (_tableView == nil) {
         
-        self.tableView = [[PullingRefreshTableView alloc] initWithFrame:CGRectMake(0, 64, kWidth, kHeight) pullingDelegate:self];
+        self.tableView = [[PullingRefreshTableView alloc] initWithFrame:CGRectMake(0, 64, kWidth, kHeight- 64) pullingDelegate:self];
         
         self.tableView.delegate = self;
         self.tableView.dataSource = self;

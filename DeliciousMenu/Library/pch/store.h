@@ -13,6 +13,20 @@
 #import "TimeTools.h"
 #import "WeiboSDK.h"
 #import "WXApiObject.h"
+//  qq  集成
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/QQApiInterfaceObject.h>
+#import <TencentOpenAPI/sdkdef.h>
+#import <TencentOpenAPI/WeiBoAPI.h>
+#import <TencentOpenAPI/TencentMessageObject.h>
+#import <TencentOpenAPI/TencentApiInterface.h>
+#import <TencentOpenAPI/TencentOAuthObject.h>
+
+#import "MJRefresh.h"
+
+//#import <MJRefresh.h>
+
 
 #ifndef store_h
 #define store_h
@@ -25,6 +39,16 @@
 #define backGround1 [UIColor colorWithRed:150 green:150 blue:150 alpha:1.0]
 
 #define kAppKey @"2864909087"
+
+#define kQQAppKey @"Dvm9AP8LNicNmEv6"
+
+
+#define kWXAppID @"wx5a390c558437d68c"
+
+//qqAppKey Dvm9AP8LNicNmEv6
+
+//qq:appid 1105241812;
+
 #define kRedirectURL @"https://api.weibo.com/oauth2/default.html"
 
 //首页网址；

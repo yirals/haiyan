@@ -22,13 +22,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ij2-fi-Hhf">
-                        <rect key="frame" x="8" y="37" width="323" height="29"/>
+                        <rect key="frame" x="8" y="37" width="331" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_uparrow" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-UU-ucd">
-                        <rect key="frame" x="303" y="8" width="14" height="19"/>
+                        <rect key="frame" x="311" y="27" width="14" height="19"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                 </subviews>
@@ -37,7 +37,7 @@
                 <outlet property="referralLable" destination="ij2-fi-Hhf" id="mgP-Ha-IoK"/>
                 <outlet property="titleLable" destination="Ti7-ye-U17" id="v16-Hm-WtW"/>
             </connections>
-            <point key="canvasLocation" x="387.5" y="433.5"/>
+            <point key="canvasLocation" x="417.5" y="539.5"/>
         </tableViewCell>
     </objects>
     <resources>

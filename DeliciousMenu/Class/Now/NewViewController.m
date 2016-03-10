@@ -33,6 +33,7 @@
     
     if (![ZMYNetManager shareZMYNetManager].isZMYNetWorkRunning) {
         
+        [ProgressHUD show:@"正在加载"];
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"您的网络有问题，请检查网络" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             YiralLog(@"确定");
@@ -53,6 +54,8 @@
     webView.frame = self.view.frame;
     NSURL *url = [NSURL URLWithString:@"http://m.benlai.com/showSite"];
     [webView loadRequest:[NSURLRequest requestWithURL:url]];
+    
+    [ProgressHUD showSuccess:@"已成功"];
     [self.view addSubview:webView];
     
     

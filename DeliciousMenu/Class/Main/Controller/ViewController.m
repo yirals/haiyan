@@ -10,12 +10,16 @@
 #import "ShowViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "store.h"
+
 #import "Reachability.h"
 
 #import "ZMYNetManager.h"
 
 #import "ProgressHUD.h"
+
+
+
+
 
 static NSString *Identifier = @"Identifier";
 
@@ -28,6 +32,7 @@ static NSString *Identifier = @"Identifier";
     NSInteger _page;
 }
 
+@property(nonatomic, assign) BOOL isRefresh;
 
 
 @property(nonatomic, strong) UICollectionView *collectionView;
@@ -45,6 +50,47 @@ static NSString *Identifier = @"Identifier";
     self.title = @"主页";
 //    self.navigationController.
     _page = 1;
+    
+    
+    // 下拉刷新
+    self.collectionView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        // 增加数据
+        [self.collectionView.mj_header beginRefreshing];
+        
+        _page=1;
+        
+        self.isRefresh=YES;
+        [self updateConfig];
+        
+        
+        YiralLog(@"下拉刷新");
+        [self.collectionView.mj_header endRefreshing];
+        
+    }];
+    
+    
+    // 上拉刷新
+    self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self.collectionView.mj_footer beginRefreshing];
+        
+        
+        YiralLog(@"上拉加载");
+        
+        _page+=1;
+        self.isRefresh=NO;
+        [self updateConfig];
+        
+        
+        
+        
+        
+        // 结束刷新
+        [self.collectionView.mj_footer endRefreshing];
+        
+        
+        
+    }];
+
     
     
     self.view.backgroundColor = backgroungColor;
@@ -72,6 +118,9 @@ static NSString *Identifier = @"Identifier";
         
     }
     
+
+
+    _page += 1;
     NSString *url = @"http://api.2meiwei.com/v1/collect/29973/?idx=";
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -118,6 +167,7 @@ static NSString *Identifier = @"Identifier";
 
 
     if (indexPath.row < self.listArray.count) {
+        
         snameLable.text = self.listArray[indexPath.row][@"title"];
         
     }
@@ -154,6 +204,7 @@ static NSString *Identifier = @"Identifier";
     
     ShowViewController *showVC = [[ShowViewController alloc] init];
 
+    
     showVC.hidesBottomBarWhenPushed = YES;
     
     showVC.strID = self.listArray[indexPath.row][@"id"];
@@ -220,5 +271,7 @@ static NSString *Identifier = @"Identifier";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 @end
