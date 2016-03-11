@@ -55,17 +55,7 @@
 
 }
 
-//-(void)setModel:(showModel *)model{
-//    
-//    self.diffLable1.text = model.diffLable;
-//    self.timeLable1.text = model.timeLable;
-//    self.tasteLable1.text = model.states;
-//    self.waysLable.text = model.wayLable;
-//    self.nameLable.text = model.nameLable;
-//    
-//    [self.showImage sd_setImageWithURL:[NSURL URLWithString:model.image] placeholderImage:nil];
-//    
-//}
+
 
 
 -(void)setDict:(NSDictionary *)dict{

@@ -11,7 +11,9 @@
 #import "MainViewController.h"
 #import "SpecialViewController.h"
 #import "NewViewController.h"
+
 #import <BmobSDK/Bmob.h>
+
 #import "WeiboSDK.h"
 //#import ""
 
@@ -36,6 +38,9 @@
     
     //微信分享
     [WXApi registerApp:kWXAppID];
+    
+    //启动图停留时间设置；
+    [NSThread sleepForTimeInterval:3];
     
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -117,6 +122,8 @@
     [WeiboSDK logOutWithToken:myDelegate.wbtoken delegate:self withTag:@"user1"];
     
 }
+
+
 
 
 ////集成微信方法；

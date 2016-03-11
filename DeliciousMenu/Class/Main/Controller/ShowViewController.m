@@ -94,11 +94,11 @@ static NSString *identifier = @"identifier";
     [manger GET:[NSString stringWithFormat:@"http://api.2meiwei.com/v1/recipe/%@/&appname=mw_android&appver=1.0.12&osver=5.0.2&devicename=ALE-TL00&openudid=866656021957511",self.strID] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         YiralLog(@"%@",downloadProgress)
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        YiralLog(@"%@",responseObject);
+
         self.showVC.dict = responseObject;
         
         self.dictory = responseObject;
-//        YiralLog(@"self.dictory === %@",self.dictory);
+
         NSArray *array = self.dictory[@"steps"];
         for (NSDictionary *dict in array) {
             showModel *modelShow = [[showModel alloc]initModelData:dict];
@@ -167,7 +167,7 @@ static NSString *identifier = @"identifier";
 
 -(showSpecialView *)showVC{
     if (_showVC == nil) {
-        _showVC = [[showSpecialView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeight *0.7)];
+        _showVC = [[showSpecialView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeight *0.6)];
         
     }
     return _showVC;
@@ -175,7 +175,7 @@ static NSString *identifier = @"identifier";
 
 -(UIView *)showView{
     if (_showView == nil) {
-        _showView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 400)];
+        _showView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeight *0.6)];
 
         _showView.backgroundColor = backgroungColor;
     }

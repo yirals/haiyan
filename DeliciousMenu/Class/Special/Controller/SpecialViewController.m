@@ -84,9 +84,9 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     [manager GET:[NSString stringWithFormat:@"%@%lu",specialNetWorkFirst,(long)_page] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         [ProgressHUD show:@"正在加载"];
-//        YiralLog(@"%@",downloadProgress);
+
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        YiralLog(@"%@",responseObject);
+
         NSDictionary *dict = responseObject;
         NSArray *array = dict[@"list"];
         
@@ -175,8 +175,23 @@
     
     return self.listArray.count;
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 90;
+    
+//    
+//    specialModel *model = self.listArray[indexPath.row];
+//    
+////    CGFloat hight = [specialTableViewCell getHightForRowModel:model];
+////
+//    CGFloat hight = [HWTools getTextHeightWithTest:model.makeLable bigestSize:CGSizeMake(kWidth, 1000) textFound:16.0];
+//
+//    CGFloat hight1 = [HWTools getTextHeightWithTest:model.nameLable bigestSize:CGSizeMake(197, 1000) textFound:16.0];
+//    
+//    
+//    return hight + 45;
+    return kHeight/8;
+    
+
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

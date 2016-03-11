@@ -120,13 +120,13 @@ static NSString *Identifier = @"Identifier";
     
 
 
-    _page += 1;
+    
     NSString *url = @"http://api.2meiwei.com/v1/collect/29973/?idx=";
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     
-    [manager GET:[NSString stringWithFormat:@"%@%lu&size=10",url,_page] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:[NSString stringWithFormat:@"%@%lu&size=10",url,(long)_page] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"downloadProgress = %@",downloadProgress);
      
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -158,12 +158,15 @@ static NSString *Identifier = @"Identifier";
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:Identifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor blueColor];
+//    cell.backgroundColor = [UIColor blueColor];
     
-   UILabel *snameLable = [[UILabel alloc] initWithFrame:CGRectMake(0, cell.frame.size.height*9/10, 182, cell.frame.size.height/9)];
+    for (UIView *view in cell.contentView.subviews) {
+        [view removeFromSuperview];
+    }
+   UILabel *snameLable = [[UILabel alloc] initWithFrame:CGRectMake(0, cell.frame.size.height*9/10, kWidth*0.485, cell.frame.size.height/9)];
     snameLable.backgroundColor = [UIColor whiteColor];
     
-     UIImageView *showImag = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 182, cell.frame.size.height*9/10)];
+     UIImageView *showImag = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kWidth*0.48, cell.frame.size.height*9/10)];
 
 
     if (indexPath.row < self.listArray.count) {
@@ -223,7 +226,7 @@ static NSString *Identifier = @"Identifier";
         //垂直显示；
         flowLayOut.scrollDirection = UICollectionViewScrollDirectionVertical;
         
-        [flowLayOut setItemSize:CGSizeMake(182, self.view.frame.size.height/3)];
+        [flowLayOut setItemSize:CGSizeMake(kWidth*0.48, self.view.frame.size.height/3)];
         //设置每一列的间距；
         flowLayOut.minimumLineSpacing = 10;
         //设置每一行的间距；

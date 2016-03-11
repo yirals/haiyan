@@ -19,4 +19,5 @@
 -(instancetype)initWithModel:(NSDictionary *)dict;
 
 
+
 @end

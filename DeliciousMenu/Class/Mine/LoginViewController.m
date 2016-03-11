@@ -77,23 +77,33 @@
 
 
 -(void)login{
-    
-    [ProgressHUD show:@"正在登录"];
-    
-    [BmobUser loginWithUsernameInBackground:@"小明"password:@"123456"];
-    
+  
     [BmobUser loginWithUsernameInBackground:self.resignTF.text password:self.resignPass.text block:^(BmobUser *user, NSError *error) {
         if (user) {
+            [ProgressHUD show:@"正在登录"];
+            
+            
+
             YiralLog(@"%@",self.resignTF.text);
+            
+            ViewController *VC = [[ViewController alloc] init];
+            [self.navigationController pushViewController:VC animated:YES];
+            [ProgressHUD showSuccess:@"登录成功"];
+            
+        }else{
+            YiralLog(@"登录失败")
+//            [ProgressHUD showSuccess:@"登录失败，请检查您的账户密码是否正确"];
+            
+            [self AlertController:@"登录失败，请检查您的账户密码是否正确"];
         }
         
         
     }];
-    [ProgressHUD showSuccess:@"恭喜您，登录成功"];
     
     
-    ViewController *VC = [[ViewController alloc] init];
-    [self.navigationController pushViewController:VC animated:YES];
+    
+    
+    
     
 }
 //在视图即将消失的时候，收起第三方菊花
@@ -105,6 +115,23 @@
     
     
 }
+
+-(void)AlertController:(NSString *)art{
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:art preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        YiralLog(@"确定");
+    }];
+    UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        YiralLog(@"取消");
+    }];
+    
+    [alert addAction:action];
+    [alert addAction:quxiao];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
 
 -(void)pushResignVC{
     

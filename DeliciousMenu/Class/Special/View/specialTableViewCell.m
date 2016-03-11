@@ -29,23 +29,50 @@
 
 -(void)setModel:(specialModel *)model{
     
-//    [self.showImageView sd_setImageWithURL:[NSURL URLWithString:model.ShowImageView] placeholderImage:nil];
-//    YiralLog(@"%@",model.ShowImageView);
+
     
     self.titleLable.text = model.nameLable;
     self.referralLable.text = model.makeLable;
+    
+//    CGFloat heaght = [[self class]getTextHeightWithText:model.makeLable];
+//    CGRect frame = self.referralLable.frame;
+//    frame.size.height = heaght;
+//    self.referralLable.frame = frame;
+    
+    
+//    CGFloat heaghg = [[self class]getTextHeightWithText:model.nameLable];
+//    CGRect frame1 = self.titleLable.frame;
+//    frame.size.height = heaghg;
+//    self.titleLable.frame = frame1;
+//    
+    
 
     
 }
 
+
+//+(CGFloat)getHightForRowModel:(specialModel *)model{
+//    
+//    CGFloat textHeight = [[self class] getTextHeightWithText:model.makeLable];
+//    
+////    CGFloat tehi = [[self class] getTextHeightWithText:model.nameLable];
+//    
+//    return textHeight;
+//    
+//}
+
+//+ (CGFloat)getTextHeightWithText:(NSString *)introl{
+//    
+//    CGRect rect = [introl boundingRectWithSize:CGSizeMake(kWidth - 40, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0]} context:nil];
+//    
+//    return rect.size.height;
+//}
+
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
-    
-    
-    
 
-    // Configure the view for the selected state
 }
 
 

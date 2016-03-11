@@ -120,11 +120,12 @@
     [bUser setEmail:self.resignEmail.text];
     [bUser signUpInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
         if (isSuccessful) {
-            [self AlertController];
+//            [self AlertController:@"注册成功"];
             [ProgressHUD showSuccess:@"注册成功"];
             NSLog(@"注册成功");
         }else{
-            
+            [self AlertController:@"注册失败，请按照要求重试"];
+
             [ProgressHUD showError:@"注册失败"];
             YiralLog(@"%@",error);
         }
@@ -242,8 +243,8 @@
 //    
 //}
 
--(void)AlertController{
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"注册成功" preferredStyle:UIAlertControllerStyleAlert];
+-(void)AlertController:(NSString *)art{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:art preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         YiralLog(@"确定");
     }];

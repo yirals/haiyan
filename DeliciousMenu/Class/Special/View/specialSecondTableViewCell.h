@@ -12,4 +12,6 @@
 
 @property(nonatomic, strong) specialSecondModel *model;
 
+//+(CGFloat )getHightForRowModel:(specialSecondModel *)model;
+
 @end

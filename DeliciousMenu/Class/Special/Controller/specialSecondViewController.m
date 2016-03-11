@@ -63,7 +63,7 @@ static NSString *identifier = @"identifier";
         [ProgressHUD show:@"正在加载中。。。。"];
         
         NSDictionary *dic = responseObject;
-        YiralLog(@"dic === %@",dic);
+
         NSArray *array = dic[@"list"];
         
         if (self.refreshing) {
@@ -98,6 +98,7 @@ static NSString *identifier = @"identifier";
     
     specialSecondTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
+    
     cell.model = self.listArray[indexPath.row];
     
     return cell;
@@ -127,7 +128,20 @@ static NSString *identifier = @"identifier";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 130;
+   
+    specialSecondModel *model = self.listArray[indexPath.row];
+ 
+    CGFloat hight = [HWTools getTextHeightWithTest:model.makeLable bigestSize:CGSizeMake(190, 1000) textFound:17.0];
+    
+    if (hight > kHeight /5 ) {
+        return hight;
+    }else
+        return kHeight/5;
+    
+    
+    
+    return 0;
+//    return kHeight/5;
 }
 
 #pragma mark------------------上拉刷新与下拉加载
@@ -192,12 +206,7 @@ static NSString *identifier = @"identifier";
     
 }
 
-//
-//-(void)dealloc{
-//    
-//    [];
-//    [];
-//}
+
 
 
 

@@ -30,11 +30,22 @@
 
 -(void)setModel:(specialSecondModel *)model{
     
+    
     [self.showImg sd_setImageWithURL:[NSURL URLWithString:model.ImagView] placeholderImage:nil];
     self.nameLable.text = model.nameLable;
     self.makeLable.text = model.makeLable;
     
+    
+//    CGFloat heaght = [[self class]getTextHeightWithText:model.makeLable];
+//    CGRect frame = self.makeLable.frame;
+//    frame.size.height = heaght;
+//    self.makeLable.frame = frame;
+    
+    
+    
 }
+
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

@@ -55,7 +55,7 @@
     
     //weibo分享；
     UIButton *wbfinish = [UIButton buttonWithType:UIButtonTypeCustom];
-    wbfinish.frame = CGRectMake(kWidth/7, kHeight/2, kWidth/4, 45);
+    wbfinish.frame = CGRectMake(kWidth/7, kHeight/2, kWidth/2, 45);
     [wbfinish addTarget:self action:@selector(shareAction) forControlEvents:UIControlEventTouchUpInside];
     UIImageView *weibo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 30, 30)];
     weibo.image = [UIImage imageNamed:@"ic_com_sina_weibo_sdk_logo"];
@@ -72,7 +72,7 @@
     //QQ登录按钮
     
     UIButton *QQfinish = [UIButton buttonWithType:UIButtonTypeCustom];
-    QQfinish.frame = CGRectMake(kWidth/7, kHeight/2+50, kWidth/3, 45);
+    QQfinish.frame = CGRectMake(kWidth/7, kHeight/2+50, kWidth/2, 45);
     [QQfinish addTarget:self action:@selector(loginQQAction) forControlEvents:UIControlEventTouchUpInside];
     UIImageView *qq = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 30, 30)];
     qq.image = [UIImage imageNamed:@"xiaoqie"];
@@ -87,7 +87,7 @@
     
     //微信朋友
     UIButton *wxFfinish = [UIButton buttonWithType:UIButtonTypeCustom];
-    wxFfinish.frame = CGRectMake(kWidth/7, kHeight/2 +100, kWidth/3, 45);
+    wxFfinish.frame = CGRectMake(kWidth/7, kHeight/2 +100, kWidth/2, 45);
     
     [wxFfinish addTarget:self action:@selector(loginWXFAction) forControlEvents:UIControlEventTouchUpInside];
     UIImageView *wxF = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 30, 30)];
@@ -105,7 +105,7 @@
 
     //微信朋友圈
     UIButton *wxfinish = [UIButton buttonWithType:UIButtonTypeCustom];
-    wxfinish.frame = CGRectMake(kWidth/7, kHeight/2 +150, kWidth/3, 45);
+    wxfinish.frame = CGRectMake(kWidth/7, kHeight/2 +150, kWidth/2, 45);
     
     [wxfinish addTarget:self action:@selector(loginWXAction) forControlEvents:UIControlEventTouchUpInside];
     UIImageView *wx = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 30, 30)];

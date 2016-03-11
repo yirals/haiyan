@@ -18,22 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="140" height="115"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="做法很简单，只要你可以认真一点" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pw4-fd-qLR">
-                        <rect key="frame" x="172" y="0.0" width="184" height="115"/>
+                        <rect key="frame" x="139" y="0.0" width="184" height="115"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsE-Hn-Ofi">
-                        <rect key="frame" x="140" y="0.0" width="24" height="26"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="1" green="0.39200310440000002" blue="0.22974803760000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="makeLable" destination="pw4-fd-qLR" id="yRS-pS-Vgq"/>
-                <outlet property="numLable" destination="gsE-Hn-Ofi" id="ezy-Fc-Ady"/>
                 <outlet property="shouImageView" destination="wzc-fx-gBQ" id="0l2-gw-6Tl"/>
             </connections>
             <point key="canvasLocation" x="429" y="403"/>

@@ -12,5 +12,5 @@
 
 @property(nonatomic, retain) specialModel *model;
 
-
+//+(CGFloat)getHightForRowModel:(specialModel *)model;
 @end
