@@ -13,15 +13,7 @@
 #import "TimeTools.h"
 #import "WeiboSDK.h"
 #import "WXApiObject.h"
-//  qq  集成
-#import <TencentOpenAPI/TencentOAuth.h>
-#import <TencentOpenAPI/QQApiInterface.h>
-#import <TencentOpenAPI/QQApiInterfaceObject.h>
-#import <TencentOpenAPI/sdkdef.h>
-#import <TencentOpenAPI/WeiBoAPI.h>
-#import <TencentOpenAPI/TencentMessageObject.h>
-#import <TencentOpenAPI/TencentApiInterface.h>
-#import <TencentOpenAPI/TencentOAuthObject.h>
+
 
 #import "MJRefresh.h"
 
@@ -40,7 +32,7 @@
 
 #define kAppKey @"2864909087"
 
-#define kQQAppKey @"Dvm9AP8LNicNmEv6"
+
 
 
 #define kWXAppID @"wx5a390c558437d68c"

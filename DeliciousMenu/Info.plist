@@ -40,16 +40,6 @@
 				<string>wx5a390c558437d68c</string>
 			</array>
 		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>com.qq</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>Dvm9AP8LNicNmEv6</string>
-			</array>
-		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>

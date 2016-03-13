@@ -48,7 +48,7 @@ static NSString *Identifier = @"Identifier";
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"主页";
-//    self.navigationController.
+
     _page = 1;
     
     
@@ -61,9 +61,9 @@ static NSString *Identifier = @"Identifier";
         
         self.isRefresh=YES;
         [self updateConfig];
+        YiralLog(@"zhengzai1shuaxin");
         
-        
-        YiralLog(@"下拉刷新");
+
         [self.collectionView.mj_header endRefreshing];
         
     }];
@@ -72,18 +72,11 @@ static NSString *Identifier = @"Identifier";
     // 上拉刷新
     self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [self.collectionView.mj_footer beginRefreshing];
-        
-        
-        YiralLog(@"上拉加载");
-        
+
         _page+=1;
         self.isRefresh=NO;
         [self updateConfig];
-        
-        
-        
-        
-        
+
         // 结束刷新
         [self.collectionView.mj_footer endRefreshing];
         

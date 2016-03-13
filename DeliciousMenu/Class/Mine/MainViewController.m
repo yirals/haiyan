@@ -15,11 +15,11 @@
 #import "WXApiObject.h"
 #import "WXApi.h"
 
-#import <TencentOpenAPI/TencentMessageObject.h>
-#import <TencentOpenAPI/TencentOAuthObject.h>
+//#import <TencentOpenAPI/TencentMessageObject.h>
+//#import <TencentOpenAPI/TencentOAuthObject.h>
 
 
-@interface MainViewController ()<UIApplicationDelegate,WBHttpRequestDelegate,TencentLoginDelegate,TencentSessionDelegate>
+@interface MainViewController ()<UIApplicationDelegate,WBHttpRequestDelegate>
 
 
 @end
@@ -83,21 +83,6 @@
     [self.view addSubview:wbfinish];
     
     
-    
-    //QQ登录按钮
-    
-//    UIButton *QQfinish = [UIButton buttonWithType:UIButtonTypeCustom];
-//    QQfinish.frame = CGRectMake(kWidth/7, kHeight/2+50, kWidth/2, 45);
-//    [QQfinish addTarget:self action:@selector(loginQQAction) forControlEvents:UIControlEventTouchUpInside];
-//    UIImageView *qq = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 30, 30)];
-//    qq.image = [UIImage imageNamed:@"xiaoqie"];
-//    [QQfinish setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-//    [QQfinish addSubview:qq];
-//    UILabel *qqlable = [[UILabel alloc] initWithFrame:CGRectMake(45,0, QQfinish.frame.size.width*3/4, 45)];
-//    qqlable.text = @"分享QQ空间";
-//    qqlable.tintColor = [UIColor grayColor];
-//    [QQfinish addSubview:qqlable];
-//    [self.view addSubview:QQfinish];
 
     
     //微信朋友
@@ -189,10 +174,7 @@
 
 -(void)loginWXFAction{
     
-    //    AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
-    //
-    //    //取消授权
-    //    [WeiboSDK logOutWithToken:myDelegate.wbtoken delegate:self withTag:@"1"];
+
     
     
     SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
@@ -205,69 +187,12 @@
     
 }
 
-#pragma mark ——分享到微信朋友圈；
 
-//-(void)loginWXAction{
-//    
-//    WXMediaMessage *message = [WXMediaMessage message];
-////    [message setThumbImage:[UIImage imageNamed:@""]];
-//    [message setTitle:@"味美佳肴，你值得拥有"];
-//    
-////    WXImageObject *ext = [WXImageObject object];
-//    WXEmoticonObject *ext = [WXEmoticonObject object];
-//    
-////    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"res6" ofType:@".gif"];
-//    
-////    ext.imageData = [NSData dataWithContentsOfFile:filePath];
-//    ext.emoticonData = [NSData dataWithContentsOfFile:@"xiaoyang"];
-//    
-//    
-////    UIImage* image = [UIImage imageWithData:ext.imageData];
-////    ext.imageData = UIImagePNGRepresentation(image);
-////    
-//    
-//    message.mediaObject = ext;
-//    
-//    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
-//    req.bText = NO;
-//    req.message = message;
-//    
-//    //朋友圈
-//    req.scene =WXSceneTimeline;
-//    
-//    [WXApi sendReq:req];
-//
-//    
-//    
-//    
-//    
-//}
-//
-
-
-//-(void)loginQQAction:(UIButton *)btn{
-//    
-//    AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
-//    
-//    //取消授权
-//    [WeiboSDK logOutWithToken:myDelegate.wbtoken delegate:self withTag:@"1"];
-//    
-//    
-//    SendMessageToWXReq* request = [[SendMessageToWXReq alloc] init];
-//    request.text = @"Hello, 我正在应用一个关于居家做味美佳肴的手机APP，在这里，不管你有没有基础，有没有做菜天赋，都可以成为居家好女人";
-//    request.bText = YES;
-//    request.scene = WXSceneSession;
-//    
-//    [WXApi sendReq:request];
-//    
-//}
 
 
 //朋友圈
 -(void)loginWXAction{
-    
-    
-    
+
     WXMediaMessage *message = [WXMediaMessage message];
     [message setThumbImage:[UIImage imageNamed:@""]];
     
@@ -294,72 +219,6 @@
 
 }
 
-#pragma mark----------- qq  分享
-
--(void)loginQQAction{
-    
-    //登录授权；
-    //    NSArray* permissions = [NSArray arrayWithObjects:kOPEN_PERMISSION_GET_USER_INFO,kOPEN_PERMISSION_GET_SIMPLE_USER_INFO,kOPEN_PERMISSION_ADD_SHARE,nil];
-    
-    //查询结果；
-    //    TencentOAuth *auth = [[TencentOAuth alloc] initWithAppId:kWXAppID andDelegate:self];
-    //
-    //    NSString *utf8String = @"最有价值的分享";
-    //
-    //    QQApiTextObject *txtObj = [QQApiTextObject objectWithText:utf8String ? : @"Hello, 我正在应用一个关于居家做味美佳肴的手机APP，在这里，不管你有没有基础，有没有做菜天赋，都可以成为居家好女人"];
-    //    [txtObj setCflag:0];
-    //
-    //    SendMessageToQQReq *req = [SendMessageToQQReq reqWithContent:txtObj];
-    
-    
-    //官方解释；
-    //开发者分享的文本内容
-    
-    QQApiTextObject *txtObj = [QQApiTextObject objectWithText:@"Hello, 我正在应用一个关于居家做味美佳肴的手机APP，在这里，不管你有没有基础，有没有做菜天赋，都可以成为居家好女人"];
-    SendMessageToQQReq *req = [SendMessageToQQReq reqWithContent:txtObj];
-    //将内容分享到qq
-    
-    QQApiSendResultCode sent = [QQApiInterface sendReq:req];
-    
-    //    [sent [NSURL ]]
-    
-    YiralLog(@"%d",sent);
-    
-
-    
-
-
-}
-
-
-//  QQ第三方登录所用到的后台方法。。。。
-
-
-/**
- * 登录成功后的回调
- */
-- (void)tencentDidLogin{
-    [self arteViewShow:@"恭喜您，登录成功"];
-}
-
-/**
- * 登录失败后的回调
- * \param cancelled 代表用户是否主动退出登录
- */
-- (void)tencentDidNotLogin:(BOOL)cancelled{
-    
-    [self arteViewShow:@"登录出现问题，请重新登录"];
-    
-}
-
-/**
- * 登录时网络有问题的回调
- */
-- (void)tencentDidNotNetWork{
-    
-//    [self art];
-    
-}
 
 
 - (void)didReceiveMemoryWarning {

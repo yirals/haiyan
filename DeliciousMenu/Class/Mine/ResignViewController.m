@@ -13,6 +13,7 @@
 #import "LoginViewController.h"
 
 @interface ResignViewController ()
+
 @property(nonatomic, strong) UITextField *resignName;
 @property(nonatomic, strong) UITextField *resignEmail;
 @property(nonatomic, strong) UITextField *resignPass;
@@ -223,31 +224,17 @@
 }
 
 
-
-
-////视图即将出现的时候，下方导航栏收起；
-//-(void)viewWillAppear:(BOOL)animated{
-//    [super viewWillDisappear:animated];
-//    self.tabBarController.tabBar.hidden = YES;
-//    
-//}
-//-(void)viewDidDisappear:(BOOL)animated {
-//    [super viewDidDisappear:animated];
-//    self.tabBarController.tabBar.hidden = NO;
-//    
-//}
-
 -(void)AlertController:(NSString *)art{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:art preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         YiralLog(@"确定");
     }];
-//    UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        YiralLog(@"取消");
-//    }];
-    //
+    UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        YiralLog(@"取消");
+    }];
+    
     [alert addAction:action];
-//    [alert addAction:quxiao];
+    [alert addAction:quxiao];
     [self presentViewController:alert animated:YES completion:nil];
 }
 

@@ -13,7 +13,6 @@
 		7A07D5011C8C399D00729A62 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A07D4FE1C8C399D00729A62 /* ProgressHUD.bundle */; };
 		7A07D5021C8C399D00729A62 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07D5001C8C399D00729A62 /* ProgressHUD.m */; };
 		7A07D5051C8C3A3F00729A62 /* UIViewController+Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A07D5041C8C3A3F00729A62 /* UIViewController+Comment.m */; };
-		7A60A5871C91074C00E605FC /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A60A5861C91074C00E605FC /* TencentOpenAPI.framework */; };
 		7A60A5891C911D7A00E605FC /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A60A5881C911D7A00E605FC /* libstdc++.tbd */; };
 		7A60A58B1C911D8F00E605FC /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A60A58A1C911D8F00E605FC /* libz.1.1.3.tbd */; };
 		7A60A60C1C91A8F700E605FC /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A60A5E21C91A8F700E605FC /* MJRefreshAutoFooter.m */; };
@@ -109,7 +108,6 @@
 		7A07D5001C8C399D00729A62 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		7A07D5031C8C3A2F00729A62 /* UIViewController+Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Comment.h"; sourceTree = "<group>"; };
 		7A07D5041C8C3A3F00729A62 /* UIViewController+Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Comment.m"; sourceTree = "<group>"; };
-		7A60A5861C91074C00E605FC /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		7A60A5881C911D7A00E605FC /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		7A60A58A1C911D8F00E605FC /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 		7A60A5E11C91A8F700E605FC /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
@@ -270,7 +268,6 @@
 				7AF7B7D51C8EF75500041AE0 /* UIKit.framework in Frameworks */,
 				7AF7B7D31C8EF74700041AE0 /* CoreText.framework in Frameworks */,
 				7AF7B7B81C8EAAF800041AE0 /* CoreTelephony.framework in Frameworks */,
-				7A60A5871C91074C00E605FC /* TencentOpenAPI.framework in Frameworks */,
 				7AF7B7B01C8EAAA900041AE0 /* Security.framework in Frameworks */,
 				7AF7B7D11C8EF71200041AE0 /* SystemConfiguration.framework in Frameworks */,
 				7AF7B82F1C8F092700041AE0 /* BmobSDK.framework in Frameworks */,
@@ -583,7 +580,6 @@
 			isa = PBXGroup;
 			children = (
 				7A60A5DF1C91A8F700E605FC /* MJRefresh */,
-				7A60A5861C91074C00E605FC /* TencentOpenAPI.framework */,
 				7AFBF42F1C9022F60082F5BA /* WeiXinSDK */,
 				7AFBF42B1C8FEB770082F5BA /* TimeTools */,
 				7AFBF4191C8FA8210082F5BA /* libWeiboSDK */,
@@ -962,7 +958,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1006,7 +1003,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1033,7 +1031,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1048,6 +1047,7 @@
 					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
 				);
 				INFOPLIST_FILE = DeliciousMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1070,8 +1070,9 @@
 					"-framework",
 					"\"SystemConfiguration\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = text.DeliciousMenu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.text.DeliciousMenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "28084418-a937-48ad-8d56-74b17a483357";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1082,7 +1083,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1097,6 +1099,7 @@
 					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
 				);
 				INFOPLIST_FILE = DeliciousMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1119,8 +1122,9 @@
 					"-framework",
 					"\"SystemConfiguration\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = text.DeliciousMenu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.text.DeliciousMenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "28084418-a937-48ad-8d56-74b17a483357";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
