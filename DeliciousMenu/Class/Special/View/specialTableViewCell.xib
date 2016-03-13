@@ -50,7 +50,7 @@
                 <outlet property="referralLable" destination="ij2-fi-Hhf" id="mgP-Ha-IoK"/>
                 <outlet property="titleLable" destination="Ti7-ye-U17" id="v16-Hm-WtW"/>
             </connections>
-            <point key="canvasLocation" x="696.5" y="624.5"/>
+            <point key="canvasLocation" x="295.5" y="304.5"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -12,10 +12,10 @@
 #import <BmobSDK/Bmob.h>
 #import "ProgressHUD.h"
 #import "ViewController.h"
+#import "MainViewController.h"
 @interface LoginViewController ()
 
 @property(nonatomic, strong) UITextField *resignTF;
-@property(nonatomic, strong) UITextField *resignPass;
 
 @end
 
@@ -26,34 +26,8 @@
     self.title = @"登录";
     [self showBackButtonWithImage:@"btn_left"];
     
-    self.resignTF = [[UITextField alloc] initWithFrame:CGRectMake(kWidth/8, kHeight/6, kWidth*3/4, 45)];
-    self.resignTF.placeholder = @"请输入用户名";
-    self.resignTF.textAlignment = NSTextAlignmentCenter;
-    self.resignTF.borderStyle = UITextBorderStyleRoundedRect;
-    [self.view addSubview:self.resignTF];
     
-    
-    self.resignPass = [[UITextField alloc] initWithFrame:CGRectMake(kWidth/8, kHeight/6+50, kWidth*3/4, 45)];
-    self.resignPass.placeholder = @"请输入密码";
-    self.resignPass.textAlignment = NSTextAlignmentCenter;
-    self.resignPass.borderStyle = UITextBorderStyleRoundedRect;
-    self.resignPass.secureTextEntry = YES;
     [self.view addSubview:self.resignPass];
-    
-    //QQ登录按钮
-    UIButton *QQfinish = [UIButton buttonWithType:UIButtonTypeCustom];
-    QQfinish.frame = CGRectMake(kWidth/8, kHeight/6 + 200, kWidth/4, 45);
-    UIImageView *qq = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 30, 30)];
-    
-    qq.image = [UIImage imageNamed:@"485c77cc7"];
-    [QQfinish setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-
-    [QQfinish addSubview:qq];
-    UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(45,0, QQfinish.frame.size.width*3/4, 45)];
-    lable.text = @"QQ登录";
-    lable.tintColor = [UIColor grayColor];
-    [QQfinish addSubview:lable];
-    [self.view addSubview:QQfinish];
     
     //登录按钮
     UIButton *Loginfinish = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -81,15 +55,21 @@
     [BmobUser loginWithUsernameInBackground:self.resignTF.text password:self.resignPass.text block:^(BmobUser *user, NSError *error) {
         if (user) {
             [ProgressHUD show:@"正在登录"];
+            [ProgressHUD showSuccess:@"登录成功"];
+
+            MainViewController *main = [[MainViewController alloc] init];
             
+            main.str = self.resignTF.text;
+            
+            self.str1 = @"1";
+            main.str1 = self.str1;
             
 
             YiralLog(@"%@",self.resignTF.text);
             
-            ViewController *VC = [[ViewController alloc] init];
-            [self.navigationController pushViewController:VC animated:YES];
-            [ProgressHUD showSuccess:@"登录成功"];
             
+            [self.navigationController pushViewController:main animated:YES];
+
         }else{
             YiralLog(@"登录失败")
 //            [ProgressHUD showSuccess:@"登录失败，请检查您的账户密码是否正确"];
@@ -157,6 +137,38 @@
     
 }
 
+-(UITextField *)resignTF{
+    if (_resignTF == nil) {
+        
+        self.resignTF = [[UITextField alloc] initWithFrame:CGRectMake(kWidth/8, kHeight/6, kWidth*3/4, 45)];
+        self.resignTF.placeholder = @"请输入用户名";
+        self.resignTF.textAlignment = NSTextAlignmentCenter;
+        self.resignTF.borderStyle = UITextBorderStyleRoundedRect;
+        [self.view addSubview:self.resignTF];
+        
+        
+        
+    }
+    
+    return _resignTF;
+}
+
+
+-(UITextField *)resignPass{
+    if (_resignPass == nil) {
+        self.resignPass = [[UITextField alloc] initWithFrame:CGRectMake(kWidth/8, kHeight/6+50, kWidth*3/4, 45)];
+        self.resignPass.placeholder = @"请输入密码";
+        //文字居中
+        self.resignPass.textAlignment = NSTextAlignmentCenter;
+        //边框样式
+        self.resignPass.borderStyle = UITextBorderStyleRoundedRect;
+        self.resignTF.text = self.str;
+        //密文显示
+        self.resignPass.secureTextEntry = YES;
+
+    }
+    return _resignPass;
+}
 
 
 

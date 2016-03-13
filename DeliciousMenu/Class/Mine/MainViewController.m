@@ -25,11 +25,26 @@
 @end
 
 @implementation MainViewController
-
+-(void)viewWillAppear:(BOOL)animated{
+    
+    
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+    //将返回按钮设置为空；
+    [self.navigationItem.backBarButtonItem setTitle:@""];
+    //隐藏返回按钮
+    [self.navigationItem setHidesBackButton:YES];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"个人";
+    
+    if ([self.str1 isEqualToString:@"1"]) {
+        self.title = self.str;
+    }else{
+        self.title = @"个人";
+
+    }
     
     
     //注册按钮；
@@ -62,7 +77,7 @@
     [wbfinish setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [wbfinish addSubview:weibo];
     UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(45,0, wbfinish.frame.size.width*3/4, 45)];
-    lable.text = @"微博分享";
+    lable.text = @"分享微博";
     lable.tintColor = [UIColor grayColor];
     [wbfinish addSubview:lable];
     [self.view addSubview:wbfinish];
@@ -71,18 +86,18 @@
     
     //QQ登录按钮
     
-    UIButton *QQfinish = [UIButton buttonWithType:UIButtonTypeCustom];
-    QQfinish.frame = CGRectMake(kWidth/7, kHeight/2+50, kWidth/2, 45);
-    [QQfinish addTarget:self action:@selector(loginQQAction) forControlEvents:UIControlEventTouchUpInside];
-    UIImageView *qq = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 30, 30)];
-    qq.image = [UIImage imageNamed:@"xiaoqie"];
-    [QQfinish setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [QQfinish addSubview:qq];
-    UILabel *qqlable = [[UILabel alloc] initWithFrame:CGRectMake(45,0, QQfinish.frame.size.width*3/4, 45)];
-    qqlable.text = @"分享QQ空间";
-    qqlable.tintColor = [UIColor grayColor];
-    [QQfinish addSubview:qqlable];
-    [self.view addSubview:QQfinish];
+//    UIButton *QQfinish = [UIButton buttonWithType:UIButtonTypeCustom];
+//    QQfinish.frame = CGRectMake(kWidth/7, kHeight/2+50, kWidth/2, 45);
+//    [QQfinish addTarget:self action:@selector(loginQQAction) forControlEvents:UIControlEventTouchUpInside];
+//    UIImageView *qq = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 30, 30)];
+//    qq.image = [UIImage imageNamed:@"xiaoqie"];
+//    [QQfinish setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+//    [QQfinish addSubview:qq];
+//    UILabel *qqlable = [[UILabel alloc] initWithFrame:CGRectMake(45,0, QQfinish.frame.size.width*3/4, 45)];
+//    qqlable.text = @"分享QQ空间";
+//    qqlable.tintColor = [UIColor grayColor];
+//    [QQfinish addSubview:qqlable];
+//    [self.view addSubview:QQfinish];
 
     
     //微信朋友
@@ -105,12 +120,12 @@
 
     //微信朋友圈
     UIButton *wxfinish = [UIButton buttonWithType:UIButtonTypeCustom];
-    wxfinish.frame = CGRectMake(kWidth/7, kHeight/2 +150, kWidth/2, 45);
+    wxfinish.frame = CGRectMake(kWidth/7, kHeight/2 +50, kWidth/2, 45);
     
     [wxfinish addTarget:self action:@selector(loginWXAction) forControlEvents:UIControlEventTouchUpInside];
     UIImageView *wx = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 30, 30)];
     
-    wx.image = [UIImage imageNamed:@"pyq"];
+    wx.image = [UIImage imageNamed:@"py_normal"];
     [wxfinish setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     
     [wxfinish addSubview:wx];

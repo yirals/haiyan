@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,16 +15,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="356" height="115"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzc-fx-gBQ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wzc-fx-gBQ">
                         <rect key="frame" x="0.0" y="0.0" width="140" height="115"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="做法很简单，只要你可以认真一点" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pw4-fd-qLR">
-                        <rect key="frame" x="139" y="0.0" width="184" height="115"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="做法很简单，只要你可以认真一点" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pw4-fd-qLR">
+                        <rect key="frame" x="148" y="0.0" width="184" height="115"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="pw4-fd-qLR" secondAttribute="trailing" constant="16" id="24W-Gb-HUG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="wzc-fx-gBQ" secondAttribute="trailing" constant="208" id="CWU-tx-TM8"/>
+                    <constraint firstItem="pw4-fd-qLR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="Dr0-d1-feM"/>
+                    <constraint firstItem="wzc-fx-gBQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="PxL-2A-Upv"/>
+                    <constraint firstItem="pw4-fd-qLR" firstAttribute="leading" secondItem="wzc-fx-gBQ" secondAttribute="trailing" constant="8" id="Xcb-l1-4wm"/>
+                    <constraint firstItem="wzc-fx-gBQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="YBE-ra-Nrb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="pw4-fd-qLR" secondAttribute="bottom" constant="-8" id="mIX-Aa-frB"/>
+                    <constraint firstItem="pw4-fd-qLR" firstAttribute="height" secondItem="wzc-fx-gBQ" secondAttribute="height" id="muC-TK-A2q"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="wzc-fx-gBQ" secondAttribute="bottom" constant="-8" id="x3y-Zm-lKK"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="makeLable" destination="pw4-fd-qLR" id="yRS-pS-Vgq"/>

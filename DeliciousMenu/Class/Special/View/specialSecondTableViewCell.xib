@@ -15,15 +15,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="342" height="113"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sna-i9-DsJ">
-                        <rect key="frame" x="8" y="8" width="96" height="97"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCy-7Y-23A">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCy-7Y-23A">
                         <rect key="frame" x="112" y="8" width="215" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="1" green="0.39200310440000002" blue="0.22974803760000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sna-i9-DsJ">
+                        <rect key="frame" x="8" y="8" width="96" height="97"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCi-fa-31x">
                         <rect key="frame" x="112" y="40" width="222" height="73"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -33,18 +33,16 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="topMargin" secondItem="sna-i9-DsJ" secondAttribute="top" id="06Z-dc-if2"/>
-                    <constraint firstAttribute="leadingMargin" secondItem="sna-i9-DsJ" secondAttribute="leading" id="1uQ-aJ-1hd"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="eCy-7Y-23A" secondAttribute="trailing" constant="5" id="3ha-2l-ctR"/>
-                    <constraint firstItem="eCy-7Y-23A" firstAttribute="leading" secondItem="sna-i9-DsJ" secondAttribute="trailing" constant="5" id="9pp-64-oc2"/>
-                    <constraint firstItem="VCi-fa-31x" firstAttribute="centerX" secondItem="eCy-7Y-23A" secondAttribute="centerX" id="FDx-a9-wcF"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="sna-i9-DsJ" secondAttribute="trailing" constant="230" id="LKJ-0v-Aa5"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="sna-i9-DsJ" secondAttribute="bottom" id="TyP-OO-5dK"/>
-                    <constraint firstItem="eCy-7Y-23A" firstAttribute="top" secondItem="sna-i9-DsJ" secondAttribute="top" id="YqC-AC-TSS"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="VCi-fa-31x" secondAttribute="bottom" id="Z0C-3h-2On"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="eCy-7Y-23A" secondAttribute="bottom" constant="80" id="fAe-VT-bAc"/>
-                    <constraint firstItem="VCi-fa-31x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="37" id="vf9-8z-pPk"/>
-                    <constraint firstItem="VCi-fa-31x" firstAttribute="leading" secondItem="sna-i9-DsJ" secondAttribute="trailing" constant="5" id="ylh-sn-vjw"/>
+                    <constraint firstItem="VCi-fa-31x" firstAttribute="leading" secondItem="sna-i9-DsJ" secondAttribute="trailing" constant="8" id="5i9-DH-57f"/>
+                    <constraint firstItem="eCy-7Y-23A" firstAttribute="leading" secondItem="sna-i9-DsJ" secondAttribute="trailing" constant="8" id="DC5-DS-LFo"/>
+                    <constraint firstAttribute="topMargin" secondItem="sna-i9-DsJ" secondAttribute="top" id="FAz-q5-R9t"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="VCi-fa-31x" secondAttribute="trailing" id="GIs-2T-FQ5"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eCy-7Y-23A" secondAttribute="trailing" constant="7" id="QmF-Pk-UC6"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="sna-i9-DsJ" secondAttribute="leading" id="WW1-lH-JAO"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="VCi-fa-31x" secondAttribute="bottom" constant="10" id="Wdn-7x-KrO"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="sna-i9-DsJ" secondAttribute="bottom" id="bLP-41-fOa"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="sna-i9-DsJ" secondAttribute="trailing" constant="230" id="d1d-iX-v4M"/>
+                    <constraint firstItem="eCy-7Y-23A" firstAttribute="top" secondItem="sna-i9-DsJ" secondAttribute="top" id="ege-NS-ZT1"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

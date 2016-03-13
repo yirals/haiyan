@@ -10,4 +10,10 @@
 
 @interface LoginViewController : UIViewController
 
+@property(nonatomic, copy) NSString *str;
+@property(nonatomic, copy) NSString *str1;
+
+@property(nonatomic, strong) UITextField *resignPass;
+
+
 @end

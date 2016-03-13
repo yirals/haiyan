@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController
-
+@property(nonatomic, retain) NSString *str;
+@property(nonatomic, retain) NSString *str1;
 @end

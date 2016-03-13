@@ -167,7 +167,7 @@ static NSString *identifier = @"identifier";
 
 -(showSpecialView *)showVC{
     if (_showVC == nil) {
-        _showVC = [[showSpecialView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeight *0.6)];
+        _showVC = [[showSpecialView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeight *0.66)];
         
     }
     return _showVC;
@@ -175,7 +175,7 @@ static NSString *identifier = @"identifier";
 
 -(UIView *)showView{
     if (_showView == nil) {
-        _showView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeight *0.6)];
+        _showView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeight *0.66)];
 
         _showView.backgroundColor = backgroungColor;
     }

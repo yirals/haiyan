@@ -10,6 +10,7 @@
 #import "UIViewController+Comment.h"
 #import "ProgressHUD.h"
 #import <BmobSDK/BmobUser.h>
+#import "LoginViewController.h"
 
 @interface ResignViewController ()
 @property(nonatomic, strong) UITextField *resignName;
@@ -28,22 +29,24 @@
     self.title = @"注册";
     [self showBackButtonWithImage:@"btn_left"];
     //头像
-    UIImageView *TitleImage = [[UIImageView alloc] initWithFrame:CGRectMake(kWidth/4, kHeight/10, kWidth/2, kWidth/2)];
+    UIImageView *TitleImage = [[UIImageView alloc] initWithFrame:CGRectMake(kWidth/4, kHeight/7, kWidth/2, kWidth/2)];
     TitleImage.backgroundColor = [UIColor cyanColor];
     TitleImage.layer.cornerRadius = kWidth/4;
     TitleImage.clipsToBounds = YES;
     TitleImage.image = [UIImage imageNamed:@"2dac0149c5f82fad5dd686c9176e4a3e"];
     [self.view addSubview:TitleImage];
     
+    
     //用户名
-    self.resignName = [[UITextField alloc] initWithFrame:CGRectMake(kWidth/8, kHeight*2/5, kWidth*3/4, 45)];
+    self.resignName = [[UITextField alloc] initWithFrame:CGRectMake(kWidth/8, kHeight/2, kWidth*3/4, 45)];
     self.resignName.placeholder = @"请输入用户名";
     self.resignName.textAlignment = NSTextAlignmentCenter;
     self.resignName.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:self.resignName];
     
+    
     //邮箱
-    self.resignEmail = [[UITextField alloc] initWithFrame:CGRectMake(kWidth/8, kHeight*2/5+50, kWidth*3/4 , 45)];
+    self.resignEmail = [[UITextField alloc] initWithFrame:CGRectMake(kWidth/8, kHeight/2+50, kWidth*3/4 , 45)];
     self.resignEmail.placeholder = @"请输入邮箱";
     self.resignEmail.textAlignment = NSTextAlignmentCenter;
     self.resignEmail.borderStyle = UITextBorderStyleRoundedRect;
@@ -51,7 +54,7 @@
 
     
     //密码
-    self.resignPass = [[UITextField alloc] initWithFrame:CGRectMake(kWidth/8, kHeight*2/5+100, kWidth*3/4, 45)];
+    self.resignPass = [[UITextField alloc] initWithFrame:CGRectMake(kWidth/8, kHeight/2+100, kWidth*3/4, 45)];
     self.resignPass.placeholder = @"请输入密码";
     self.resignPass.textAlignment = NSTextAlignmentCenter;
     self.resignPass.borderStyle = UITextBorderStyleRoundedRect;
@@ -59,39 +62,24 @@
     [self.view addSubview:self.resignPass];
     
     //再次输入密码；
-    self.resignSecPass = [[UITextField alloc] initWithFrame:CGRectMake(kWidth/8, kHeight*2/5 +150, kWidth*3/4, 45)];
+    self.resignSecPass = [[UITextField alloc] initWithFrame:CGRectMake(kWidth/8, kHeight/2 +150, kWidth*3/4, 45)];
     self.resignSecPass.placeholder = @"请再次输入密码";
     self.resignSecPass.textAlignment = NSTextAlignmentCenter;
     self.resignSecPass.borderStyle = UITextBorderStyleRoundedRect;
-    self.resignPass.secureTextEntry = YES;
+    self.resignSecPass.secureTextEntry = YES;
     [self.view addSubview:self.resignSecPass];
     
     
     
     UIButton *finish = [UIButton buttonWithType:UIButtonTypeCustom];
-    finish.frame = CGRectMake(kWidth/2, kHeight*2/5 +200, kWidth/4, 45);
+    finish.frame = CGRectMake(kWidth/2, kHeight/2 +200, kWidth/4, 45);
     [finish setTitle:@"完成" forState:UIControlStateNormal];
     [finish addTarget:self action:@selector(finishAction) forControlEvents:UIControlEventTouchUpInside];
-//    finish.backgroundColor = [UIColor whiteColor];
+
     [finish setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [self.view addSubview:finish];
     
-    //QQ登录按钮
-    UIButton *QQfinish = [UIButton buttonWithType:UIButtonTypeCustom];
-    QQfinish.frame = CGRectMake(kWidth/8, kHeight*2/5 +200, kWidth/4, 45);
-    UIImageView *qq = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 30, 30)];
-    
-    qq.image = [UIImage imageNamed:@"485c77cc7"];
-    [QQfinish setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    
-    [QQfinish addSubview:qq];
-    UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(45,0, QQfinish.frame.size.width*3/4, 45)];
-    lable.text = @"QQ登录";
-    lable.tintColor = [UIColor grayColor];
-    [QQfinish addSubview:lable];
-    [self.view addSubview:QQfinish];
-
-    
+  
 }
 //点击空白处回收键盘；
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -109,10 +97,11 @@
 
 
 -(void)finishAction{
-    if ([self checkOut]) {
+    if (![self checkOut]) {
         return ;
     }
     [ProgressHUD show:@"正在注册"];
+    
     BmobUser *bUser = [[BmobUser alloc] init];
     [bUser setUsername:self.resignName.text];
     [bUser setPassword:self.resignPass.text];
@@ -122,12 +111,17 @@
         if (isSuccessful) {
 //            [self AlertController:@"注册成功"];
             [ProgressHUD showSuccess:@"注册成功"];
-            NSLog(@"注册成功");
+            
+            LoginViewController *controller = [[LoginViewController alloc] init];
+            
+            controller.str = self.resignName.text;
+            
+            [self.navigationController pushViewController:controller animated:YES];
+            
+            
         }else{
             [self AlertController:@"注册失败，请按照要求重试"];
 
-            [ProgressHUD showError:@"注册失败"];
-            YiralLog(@"%@",error);
         }
     }];
 
@@ -248,12 +242,12 @@
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         YiralLog(@"确定");
     }];
-    UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        YiralLog(@"取消");
-    }];
+//    UIAlertAction *quxiao = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        YiralLog(@"取消");
+//    }];
     //
     [alert addAction:action];
-    [alert addAction:quxiao];
+//    [alert addAction:quxiao];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
